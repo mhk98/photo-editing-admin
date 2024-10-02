@@ -1,0 +1,188 @@
+[
+  {
+    "title": "main_pages",
+    "menus": [
+      {
+        "icon": "pix",
+        "text": "Home",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/home-banner", "text": "Home Banner" },
+          { "path": "/home-slider", "text": "Home Slider" },
+          { "path": "/about-us", "text": "About Us" },
+          { "path": "/how-it-works", "text": "How It Works" },
+          { "path": "/why-choose-us", "text": "Why Choose Us" },
+          { "path": "/stunning-quality", "text": "Stunning Quality" },
+          { "path": "/testimonial", "text": "Testimonial" },
+          { "path": "/pricing-plan", "text": "Pricing Plan" },
+          { "path": "/news", "text": "News" },
+          { "path": "/remove-image", "text": "Remove Image" },
+          { "path": "/clients", "text": "Clients" }
+        ]
+      },
+      {
+        "icon": "pix",
+        "text": "Clipping Path",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/clipping-path", "text": "Clipping Path" },
+          { "path": "/clipping-path-projects", "text": "Clipping Path Projects"},
+          { "path": "/clipping-path-how-it-works", "text": "Clipping Path How It Works"},
+          { "path": "/clipping-path-price", "text": "Clipping Path Price" },
+          { "path": "/clipping-path-testimonial", "text": "Clipping Path Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Background Removal",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/background-removal", "text": "Background Removal" },
+          { "path": "/background-removal-projects", "text": "Background Removal Projects"},
+          { "path": "/background-removal-how-it-works", "text": "Background Removal How It Works"},
+          { "path": "/background-removal-price", "text": "Background Removal Price" },
+          { "path": "/background-removal-testimonial", "text": "Background Removal Testimonial" }
+          
+        ]
+      },
+      {
+        "icon": "pix",
+        "text": "Image Retouching",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/image-retouching",              "text": "Image Retouching " },
+          { "path": "/image-retouching-projects",     "text": "Image Retouching Projects"},
+          { "path": "/image-retouching-how-it-works", "text": "Image Retouching How It Works"},
+          { "path": "/image-retouching-price",        "text": "Image Retouching Price" },
+          { "path": "/image-retouching-testimonial",  "text": "Image Retouching Testimonial" }
+          
+        ]
+      },
+      {
+        "icon": "pix",
+        "text": "Ghost Mannequin",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/ghost-mannequin",              "text": "Ghost Mannequin " },
+          { "path": "/ghost-mannequin-projects",     "text": "Ghost Mannequin Projects"},
+          { "path": "/ghost-mannequin-how-it-works", "text": "Ghost Mannequin How It Works"},
+          { "path": "/ghost-mannequin-price",        "text": "Ghost Mannequin Price" },
+          { "path": "/ghost-mannequin-testimonial",  "text": "Ghost Mannequin Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Image Masking",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/image-masking",              "text": "Image Masking " },
+          { "path": "/image-masking-projects",     "text": "Image Masking Projects"},
+          { "path": "/image-masking-how-it-works", "text": "Image Masking How It Works"},
+          { "path": "/image-masking-price",        "text": "Image Masking Price" },
+          { "path": "/image-masking-testimonial",  "text": "Image Masking Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Shadow Creation",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/shadow-creation",              "text": "Shadow Creation " },
+          { "path": "/shadow-creation-projects",     "text": "Shadow Creation Projects"},
+          { "path": "/shadow-creation-how-it-works", "text": "Shadow Creation How It Works"},
+          { "path": "/shadow-creation-price",        "text": "Shadow Creation Price" },
+          { "path": "/shadow-creation-testimonial",  "text": "Shadow Creation Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Color Correction",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/color-correction",              "text": "Color Correction " },
+          { "path": "/color-correction-projects",     "text": "Color Correction Projects"},
+          { "path": "/color-correction-how-it-works", "text": "Color Correction How It Works"},
+          { "path": "/color-correction-price",        "text": "Color Correction Price" },
+          { "path": "/color-correction-testimonial",  "text": "Color Correction Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Image Restoration",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/image-restoration",              "text": "Image Restoration " },
+          { "path": "/image-restoration-projects",     "text": "Image Restoration Projects"},
+          { "path": "/image-restoration-how-it-works", "text": "Image Restoration How It Works"},
+          { "path": "/image-restoration-price",        "text": "Image Restoration Price" },
+          { "path": "/image-restoration-testimonial",  "text": "Image Restoration Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Image Manipulation",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/image-manipulation",              "text": "Image Manipulation " },
+          { "path": "/image-manipulation-projects",     "text": "Image Manipulation Projects"},
+          { "path": "/image-manipulation-how-it-works", "text": "Image Manipulation How It Works"},
+          { "path": "/image-manipulation-price",        "text": "Image Manipulation Price" },
+          { "path": "/image-manipulation-testimonial",  "text": "Image Manipulation Testimonial" }
+          
+        ]
+      },
+
+      {
+        "icon": "pix",
+        "text": "Automotive",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/automotive",              "text": "Automotive " },
+          { "path": "/automotive-projects",     "text": "Automotive Projects"},
+          { "path": "/automotive-how-it-works", "text": "Automotive How It Works"},
+          { "path": "/automotive-price",        "text": "Automotive Price" },
+          { "path": "/automotive-testimonial",  "text": "Automotive Testimonial" }
+          
+        ]
+      },
+      {
+        "icon": "pix",
+        "text": "Reflection Creation",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/reflection-creation",              "text": "Reflection Creation " },
+          { "path": "/reflection-creation-projects",     "text": "Reflection Creation Projects"},
+          { "path": "/reflection-creation-how-it-works", "text": "Reflection Creation How It Works"},
+          { "path": "/reflection-creation-price",        "text": "Reflection Creation Price" },
+          { "path": "/reflection-creation-testimonial",  "text": "Reflection Creation Testimonial" }
+          
+        ]
+      },
+      {
+        "icon": "pix",
+        "text": "Vector",
+        "badge": { "text": "", "variant": "red square" },
+        "submenus": [
+          { "path": "/vector",              "text": "Vector " },
+          { "path": "/vector-projects",     "text": "Vector Projects"},
+          { "path": "/vector-how-it-works", "text": "Vector How It Works"},
+          { "path": "/vector-price",        "text": "Vector Price" },
+          { "path": "/vector-testimonial",  "text": "Vector Testimonial" }
+          
+        ]
+      }
+    ]
+  }
+]
