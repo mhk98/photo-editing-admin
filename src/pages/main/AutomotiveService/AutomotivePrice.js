@@ -11,7 +11,7 @@ import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
 import { useCreateClippingPathPriceMutation, useDeleteClippingPathPriceMutation, useGetAllClippingPathPriceQuery, useUpdateClippingPathPriceMutation } from "../../../features/ClippingPathService/clippingPathPrice/clippingPathPrice";
 
-const AutomotivePathPrice = () => {
+const AutomotivePrice = () => {
   const thead = ["Image", "Title","Price", "Feature1", "Feature2", "Feature3", "Feature4", "action"];
 
   const { t } = useContext(TranslatorContext);
@@ -441,4 +441,4 @@ const AutomotivePathPrice = () => {
   );
 };
 
-export default AutomotivePathPrice;
+export default AutomotivePrice;

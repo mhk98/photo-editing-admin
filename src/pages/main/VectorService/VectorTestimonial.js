@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathTestimonialMutation, useDeleteClippingPathTestimonialMutation, useGetAllClippingPathTestimonialQuery, useUpdateClippingPathTestimonialMutation } from "../../../features/ClippingPathService/clippingPathTestimonial/clippingPathTestimonial";
+import { useCreatevectorTestimonialMutation, useDeletevectorTestimonialMutation, useGetAllvectorTestimonialQuery, useUpdatevectorTestimonialMutation } from "../../../features/VectorService/vectorTestimonial/vectorTestimonial";
 
 
 const VectorTestimonial = () => {
@@ -44,7 +44,7 @@ const VectorTestimonial = () => {
     }
   }
 
-  const [createClippingPathTestimonial] = useCreateClippingPathTestimonialMutation();
+  const [createvectorTestimonial] = useCreatevectorTestimonialMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -58,7 +58,7 @@ const VectorTestimonial = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathTestimonial(formData);
+      const res = await createvectorTestimonial(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -67,7 +67,7 @@ const VectorTestimonial = () => {
     }
   };
 
-  const [updateClippingPathTestimonial] = useUpdateClippingPathTestimonialMutation();
+  const [updatevectorTestimonial] = useUpdatevectorTestimonialMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -80,7 +80,7 @@ const VectorTestimonial = () => {
  
 
     try {
-      const res = await updateClippingPathTestimonial({ id: updateId, data: formData });
+      const res = await updatevectorTestimonial({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -91,7 +91,7 @@ const VectorTestimonial = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathTestimonialQuery();
+  const { data, isLoading, isError, error } = useGetAllvectorTestimonialQuery();
 
   useEffect(() => {
     if (isError) {
@@ -103,10 +103,10 @@ const VectorTestimonial = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathTestimonial] = useDeleteClippingPathTestimonialMutation();
+  const [deletevectorTestimonial] = useDeletevectorTestimonialMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathTestimonial(id);
+    const res = await deletevectorTestimonial(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

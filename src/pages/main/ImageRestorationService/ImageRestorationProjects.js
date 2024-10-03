@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathProjectsMutation, useDeleteClippingPathProjectsMutation, useGetAllClippingPathProjectsQuery, useUpdateClippingPathProjectsMutation } from "../../../features/ClippingPathService/clippingPathProjects/clippingPathProjects";
+import { useCreateimageRestorationProjectsMutation, useDeleteimageRestorationProjectsMutation, useGetAllimageRestorationProjectsQuery, useUpdateimageRestorationProjectsMutation } from "../../../features/ImageRestorationService/imageRestorationProjects/clippingPathProjects";
 
 const ImageRestorationProjects = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const ImageRestorationProjects = () => {
  
 
 
-  const [createClippingPathProjects] = useCreateClippingPathProjectsMutation();
+  const [createimageRestorationProjects] = useCreateimageRestorationProjectsMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -48,7 +48,7 @@ const ImageRestorationProjects = () => {
     formData.append("image", image);
    
     try {
-      const res = await createClippingPathProjects(formData);
+      const res = await createimageRestorationProjects(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -57,7 +57,7 @@ const ImageRestorationProjects = () => {
     }
   };
 
-  const [updateClippingPathProjects] = useUpdateClippingPathProjectsMutation();
+  const [updateimageRestorationProjects] = useUpdateimageRestorationProjectsMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -65,7 +65,7 @@ const ImageRestorationProjects = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateClippingPathProjects({ id: updateId, data: formData });
+      const res = await updateimageRestorationProjects({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -76,7 +76,7 @@ const ImageRestorationProjects = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathProjectsQuery();
+  const { data, isLoading, isError, error } = useGetAllimageRestorationProjectsQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +88,10 @@ const ImageRestorationProjects = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathProjects] = useDeleteClippingPathProjectsMutation();
+  const [deleteimageRestorationProjects] = useDeleteimageRestorationProjectsMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathProjects(id);
+    const res = await deleteimageRestorationProjects(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathMutation, useDeleteclippingPathMutation, useGetAllclippingPathQuery, useUpdateclippingPathMutation } from "../../../features/ClippingPathService/clippingPath/clippingPath";
+import { useCreateimageManipulationMutation, useDeleteimageManipulationMutation, useGetAllimageManipulationQuery, useUpdateimageManipulationMutation } from "../../../features/ImageManipulationService/imageManipulation/imageManipulation";
 
 
 const ImageManipulation = () => {
@@ -41,7 +41,7 @@ const ImageManipulation = () => {
  
 
 
-  const [createclippingPath] = useCreateclippingPathMutation();
+  const [createimageManipulation] = useCreateimageManipulationMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -49,7 +49,7 @@ const ImageManipulation = () => {
     formData.append("image", image);
    
     try {
-      const res = await createclippingPath(formData);
+      const res = await createimageManipulation(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -58,7 +58,7 @@ const ImageManipulation = () => {
     }
   };
 
-  const [updateclippingPath] = useUpdateclippingPathMutation();
+  const [updateimageManipulation] = useUpdateimageManipulationMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -66,7 +66,7 @@ const ImageManipulation = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateclippingPath({ id: updateId, data: formData });
+      const res = await updateimageManipulation({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -77,7 +77,7 @@ const ImageManipulation = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathQuery();
+  const { data, isLoading, isError, error } = useGetAllimageManipulationQuery();
 
   useEffect(() => {
     if (isError) {
@@ -89,10 +89,10 @@ const ImageManipulation = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPath] = useDeleteclippingPathMutation();
+  const [deleteimageManipulation] = useDeleteimageManipulationMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPath(id);
+    const res = await deleteimageManipulation(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

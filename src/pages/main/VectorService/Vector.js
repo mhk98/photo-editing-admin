@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathMutation, useDeleteclippingPathMutation, useGetAllclippingPathQuery, useUpdateclippingPathMutation } from "../../../features/ClippingPathService/clippingPath/clippingPath";
+import { useCreatevectorMutation, useDeletevectorMutation, useGetAllvectorQuery, useUpdatevectorMutation } from "../../../features/VectorService/vector/vector";
 
 
 const Vector = () => {
@@ -41,7 +41,7 @@ const Vector = () => {
  
 
 
-  const [createclippingPath] = useCreateclippingPathMutation();
+  const [createvector] = useCreatevectorMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -49,7 +49,7 @@ const Vector = () => {
     formData.append("image", image);
    
     try {
-      const res = await createclippingPath(formData);
+      const res = await createvector(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -58,7 +58,7 @@ const Vector = () => {
     }
   };
 
-  const [updateclippingPath] = useUpdateclippingPathMutation();
+  const [updatevector] = useUpdatevectorMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -66,7 +66,7 @@ const Vector = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateclippingPath({ id: updateId, data: formData });
+      const res = await updatevector({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -77,7 +77,7 @@ const Vector = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathQuery();
+  const { data, isLoading, isError, error } = useGetAllvectorQuery();
 
   useEffect(() => {
     if (isError) {
@@ -89,7 +89,7 @@ const Vector = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPath] = useDeleteclippingPathMutation();
+  const [deleteclippingPath] = useDeletevectorMutation();
 
   const handleDeleteHomeBanner = async (id) => {
     const res = await deleteclippingPath(id);

@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathTestimonialMutation, useDeleteClippingPathTestimonialMutation, useGetAllClippingPathTestimonialQuery, useUpdateClippingPathTestimonialMutation } from "../../../features/ClippingPathService/clippingPathTestimonial/clippingPathTestimonial";
+import { useCreateimageManipulationTestimonialMutation, useDeleteimageManipulationTestimonialMutation, useGetAllimageManipulationTestimonialQuery, useUpdateimageManipulationTestimonialMutation } from "../../../features/ImageManipulationService/imageManipulationTestimonial/imageManipulationTestimonial";
 
 
 const ImageManipulationTestimonial = () => {
@@ -44,7 +44,7 @@ const ImageManipulationTestimonial = () => {
     }
   }
 
-  const [createClippingPathTestimonial] = useCreateClippingPathTestimonialMutation();
+  const [createimageManipulationTestimonial] = useCreateimageManipulationTestimonialMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -58,7 +58,7 @@ const ImageManipulationTestimonial = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathTestimonial(formData);
+      const res = await createimageManipulationTestimonial(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -67,7 +67,7 @@ const ImageManipulationTestimonial = () => {
     }
   };
 
-  const [updateClippingPathTestimonial] = useUpdateClippingPathTestimonialMutation();
+  const [updateimageManipulationTestimonial] = useUpdateimageManipulationTestimonialMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -80,7 +80,7 @@ const ImageManipulationTestimonial = () => {
  
 
     try {
-      const res = await updateClippingPathTestimonial({ id: updateId, data: formData });
+      const res = await updateimageManipulationTestimonial({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -91,7 +91,7 @@ const ImageManipulationTestimonial = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathTestimonialQuery();
+  const { data, isLoading, isError, error } = useGetAllimageManipulationTestimonialQuery();
 
   useEffect(() => {
     if (isError) {
@@ -103,10 +103,10 @@ const ImageManipulationTestimonial = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathTestimonial] = useDeleteClippingPathTestimonialMutation();
+  const [deleteimageManipulationTestimonial] = useDeleteimageManipulationTestimonialMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathTestimonial(id);
+    const res = await deleteimageManipulationTestimonial(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

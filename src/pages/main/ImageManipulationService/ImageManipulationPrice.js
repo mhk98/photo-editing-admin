@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathPriceMutation, useDeleteClippingPathPriceMutation, useGetAllClippingPathPriceQuery, useUpdateClippingPathPriceMutation } from "../../../features/ClippingPathService/clippingPathPrice/clippingPathPrice";
+import { useCreateimageManipulationPriceMutation, useDeleteimageManipulationPriceMutation, useGetAllimageManipulationPriceQuery, useUpdateimageManipulationPriceMutation } from "../../../features/ImageManipulationService/imageManipulationPrice/imageManipulationPrice";
 
 const ImageManipulationPrice = () => {
   const thead = ["Image", "Title","Price", "Feature1", "Feature2", "Feature3", "Feature4", "action"];
@@ -45,7 +45,7 @@ const ImageManipulationPrice = () => {
     }
   }
 
-  const [createClippingPathPrice] = useCreateClippingPathPriceMutation();
+  const [createimageManipulationPrice] = useCreateimageManipulationPriceMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -60,7 +60,7 @@ const ImageManipulationPrice = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathPrice(formData);
+      const res = await createimageManipulationPrice(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -69,7 +69,7 @@ const ImageManipulationPrice = () => {
     }
   };
 
-  const [updateClippingPathPrice] = useUpdateClippingPathPriceMutation();
+  const [updateimageManipulationPrice] = useUpdateimageManipulationPriceMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -83,7 +83,7 @@ const ImageManipulationPrice = () => {
     formData.append("feature4", feature4);
 
     try {
-      const res = await updateClippingPathPrice({ id: updateId, data: formData });
+      const res = await updateimageManipulationPrice({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -94,7 +94,7 @@ const ImageManipulationPrice = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathPriceQuery();
+  const { data, isLoading, isError, error } = useGetAllimageManipulationPriceQuery();
 
   useEffect(() => {
     if (isError) {
@@ -106,10 +106,10 @@ const ImageManipulationPrice = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathPrice] = useDeleteClippingPathPriceMutation();
+  const [deleteimageManipulationPrice] = useDeleteimageManipulationPriceMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathPrice(id);
+    const res = await deleteimageManipulationPrice(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

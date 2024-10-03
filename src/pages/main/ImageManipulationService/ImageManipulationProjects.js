@@ -9,7 +9,9 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathProjectsMutation, useDeleteClippingPathProjectsMutation, useGetAllClippingPathProjectsQuery, useUpdateClippingPathProjectsMutation } from "../../../features/ClippingPathService/clippingPathProjects/clippingPathProjects";
+import { useCreateimageManipulationProjectsMutation, useGetAllimageManipulationProjectsQuery,
+  useDeleteimageManipulationProjectsMutation,
+  useUpdateimageManipulationProjectsMutation } from "../../../features/ImageManipulationService/imageManipulationProjects/imageManipulationProjects";
 
 const ImageManipulationProjects = () => {
   const thead = ["image",  "action"];
@@ -40,7 +42,7 @@ const ImageManipulationProjects = () => {
  
 
 
-  const [createClippingPathProjects] = useCreateClippingPathProjectsMutation();
+  const [createimageManipulationProjects] = useCreateimageManipulationProjectsMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -48,7 +50,7 @@ const ImageManipulationProjects = () => {
     formData.append("image", image);
    
     try {
-      const res = await createClippingPathProjects(formData);
+      const res = await createimageManipulationProjects(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -57,7 +59,7 @@ const ImageManipulationProjects = () => {
     }
   };
 
-  const [updateClippingPathProjects] = useUpdateClippingPathProjectsMutation();
+  const [updateClippingPathProjects] = useUpdateimageManipulationProjectsMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -76,7 +78,7 @@ const ImageManipulationProjects = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathProjectsQuery();
+  const { data, isLoading, isError, error } = useGetAllimageManipulationProjectsQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +90,10 @@ const ImageManipulationProjects = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathProjects] = useDeleteClippingPathProjectsMutation();
+  const [deleteimageManipulationProjects] = useDeleteimageManipulationProjectsMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathProjects(id);
+    const res = await deleteimageManipulationProjects(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

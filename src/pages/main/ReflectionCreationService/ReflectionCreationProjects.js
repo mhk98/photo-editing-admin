@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathProjectsMutation, useDeleteClippingPathProjectsMutation, useGetAllClippingPathProjectsQuery, useUpdateClippingPathProjectsMutation } from "../../../features/ClippingPathService/clippingPathProjects/clippingPathProjects";
+import { useCreatereflectionCreationProjectsMutation, useDeletereflectionCreationProjectsMutation, useGetAllreflectionCreationProjectsQuery, useUpdatereflectionCreationProjectsMutation } from "../../../features/ReflectionCreationService/reflectionCreationProjects/reflectionCreationProjects";
 
 const ReflectionCreationProjects = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const ReflectionCreationProjects = () => {
  
 
 
-  const [createClippingPathProjects] = useCreateClippingPathProjectsMutation();
+  const [createreflectionCreationProjects] = useCreatereflectionCreationProjectsMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -48,7 +48,7 @@ const ReflectionCreationProjects = () => {
     formData.append("image", image);
    
     try {
-      const res = await createClippingPathProjects(formData);
+      const res = await createreflectionCreationProjects(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -57,7 +57,7 @@ const ReflectionCreationProjects = () => {
     }
   };
 
-  const [updateClippingPathProjects] = useUpdateClippingPathProjectsMutation();
+  const [updateClippingPathProjects] = useUpdatereflectionCreationProjectsMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -76,7 +76,7 @@ const ReflectionCreationProjects = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathProjectsQuery();
+  const { data, isLoading, isError, error } = useGetAllreflectionCreationProjectsQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,7 +88,7 @@ const ReflectionCreationProjects = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathProjects] = useDeleteClippingPathProjectsMutation();
+  const [deleteClippingPathProjects] = useDeletereflectionCreationProjectsMutation();
 
   const handleDeleteHomeBanner = async (id) => {
     const res = await deleteClippingPathProjects(id);

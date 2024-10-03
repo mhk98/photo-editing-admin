@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathPriceMutation, useDeleteClippingPathPriceMutation, useGetAllClippingPathPriceQuery, useUpdateClippingPathPriceMutation } from "../../../features/ClippingPathService/clippingPathPrice/clippingPathPrice";
+import { useCreatereflectionCreationPriceMutation, useDeletereflectionCreationPriceMutation, useGetAllreflectionCreationPriceQuery, useUpdatereflectionCreationPriceMutation } from "../../../features/ReflectionCreationService/reflectionCreationPrice/reflectionCreationPrice";
 
 const ReflectionCreationPrice = () => {
   const thead = ["Image", "Title","Price", "Feature1", "Feature2", "Feature3", "Feature4", "action"];
@@ -45,7 +45,7 @@ const ReflectionCreationPrice = () => {
     }
   }
 
-  const [createClippingPathPrice] = useCreateClippingPathPriceMutation();
+  const [createreflectionCreationPrice] = useCreatereflectionCreationPriceMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -60,7 +60,7 @@ const ReflectionCreationPrice = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathPrice(formData);
+      const res = await createreflectionCreationPrice(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -69,7 +69,7 @@ const ReflectionCreationPrice = () => {
     }
   };
 
-  const [updateClippingPathPrice] = useUpdateClippingPathPriceMutation();
+  const [updatereflectionCreationPrice] = useUpdatereflectionCreationPriceMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -83,7 +83,7 @@ const ReflectionCreationPrice = () => {
     formData.append("feature4", feature4);
 
     try {
-      const res = await updateClippingPathPrice({ id: updateId, data: formData });
+      const res = await updatereflectionCreationPrice({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -94,7 +94,7 @@ const ReflectionCreationPrice = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathPriceQuery();
+  const { data, isLoading, isError, error } = useGetAllreflectionCreationPriceQuery();
 
   useEffect(() => {
     if (isError) {
@@ -106,10 +106,10 @@ const ReflectionCreationPrice = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathPrice] = useDeleteClippingPathPriceMutation();
+  const [deletereflectionCreationPrice] = useDeletereflectionCreationPriceMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathPrice(id);
+    const res = await deletereflectionCreationPrice(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

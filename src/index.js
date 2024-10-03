@@ -112,7 +112,6 @@ import ImageManipulationTestimonial from "./pages/main/ImageManipulationService/
 import Automotive from "./pages/main/AutomotiveService/Automotive";
 import AutomotiveHowItWorks from "./pages/main/AutomotiveService/AutomotiveHowItWorks";
 import AutomotiveProjects from "./pages/main/AutomotiveService/AutomotiveProjects";
-import AutomotivePathPrice from "./pages/main/AutomotiveService/AutomotivePathPrice";
 import AutomotiveTestimonial from "./pages/main/AutomotiveService/AutomotiveTestimonial";
 import ReflectionCreation from "./pages/main/ReflectionCreationService/ReflectionCreation";
 import ReflectionCreationHowItWorks from "./pages/main/ReflectionCreationService/ReflectionCreationHowItWorks";
@@ -123,6 +122,7 @@ import Vector from "./pages/main/VectorService/Vector";
 import VectorHowItWorks from "./pages/main/VectorService/VectorHowItWorks";
 import VectorProjects from "./pages/main/VectorService/VectorProjects";
 import VectorTestimonial from "./pages/main/VectorService/VectorTestimonial";
+import AutomotivePrice from "./pages/main/AutomotiveService/AutomotivePrice";
 
 
 const router = createBrowserRouter([
@@ -201,7 +201,7 @@ const router = createBrowserRouter([
   { path: "/automotive", element: <Automotive /> },
   { path: "/automotive-how-it-works", element: <AutomotiveHowItWorks /> },
   { path: "/automotive-projects", element: <AutomotiveProjects /> },
-  { path: "/automotive-price", element: <AutomotivePathPrice /> },
+  { path: "/automotive-price", element: <AutomotivePrice /> },
   { path: "/automotive-testimonial", element: <AutomotiveTestimonial /> },
 
   { path: "/reflection-creation", element: <ReflectionCreation /> },

@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathHowItWorksMutation, useDeleteclippingPathHowItWorksMutation, useGetAllclippingPathHowItWorksQuery, useUpdateclippingPathHowItWorksMutation } from "../../../features/ClippingPathService/clippingPathHowItWorks/clippingPathHowItWorks";
+import { useCreateAutomotiveHowItWorksMutation, useDeleteAutomotiveHowItWorksMutation, useGetAllAutomotiveHowItWorksQuery, useUpdateAutomotiveHowItWorksMutation } from "../../../features/AutomotiveService/automotiveHowItWorks/automotiveHowItWorks";
 
 const AutomotiveHowItWorks = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const AutomotiveHowItWorks = () => {
  
 
 
-  const [createclippingPathHowItWorks] = useCreateclippingPathHowItWorksMutation();
+  const [createAutomotiveHowItWorks] = useCreateAutomotiveHowItWorksMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -48,7 +48,7 @@ const AutomotiveHowItWorks = () => {
     formData.append("image", image);
    
     try {
-      const res = await createclippingPathHowItWorks(formData);
+      const res = await createAutomotiveHowItWorks(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -57,7 +57,7 @@ const AutomotiveHowItWorks = () => {
     }
   };
 
-  const [updateclippingPathHowItWorks] = useUpdateclippingPathHowItWorksMutation();
+  const [updateAutomotiveHowItWorks] = useUpdateAutomotiveHowItWorksMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -65,7 +65,7 @@ const AutomotiveHowItWorks = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateclippingPathHowItWorks({ id: updateId, data: formData });
+      const res = await updateAutomotiveHowItWorks({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -76,7 +76,7 @@ const AutomotiveHowItWorks = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathHowItWorksQuery();
+  const { data, isLoading, isError, error } = useGetAllAutomotiveHowItWorksQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +88,10 @@ const AutomotiveHowItWorks = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPathHowItWorks] = useDeleteclippingPathHowItWorksMutation();
+  const [deleteAutomotiveHowItWorks] = useDeleteAutomotiveHowItWorksMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPathHowItWorks(id);
+    const res = await deleteAutomotiveHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

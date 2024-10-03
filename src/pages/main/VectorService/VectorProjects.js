@@ -9,7 +9,10 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathProjectsMutation, useDeleteClippingPathProjectsMutation, useGetAllClippingPathProjectsQuery, useUpdateClippingPathProjectsMutation } from "../../../features/ClippingPathService/clippingPathProjects/clippingPathProjects";
+import { useCreatevectorProjectsMutation,
+  useGetAllvectorProjectsQuery,
+  useDeletevectorProjectsMutation,
+  useUpdatevectorProjectsMutation } from "../../../features/VectorService/vectorProjects/vectorProjects";
 
 const VectorProjects = () => {
   const thead = ["image",  "action"];
@@ -40,7 +43,7 @@ const VectorProjects = () => {
  
 
 
-  const [createClippingPathProjects] = useCreateClippingPathProjectsMutation();
+  const [createClippingPathProjects] = useCreatevectorProjectsMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -57,7 +60,7 @@ const VectorProjects = () => {
     }
   };
 
-  const [updateClippingPathProjects] = useUpdateClippingPathProjectsMutation();
+  const [updatevectorProjects] = useUpdatevectorProjectsMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -65,7 +68,7 @@ const VectorProjects = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateClippingPathProjects({ id: updateId, data: formData });
+      const res = await updatevectorProjects({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -76,7 +79,7 @@ const VectorProjects = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathProjectsQuery();
+  const { data, isLoading, isError, error } = useGetAllvectorProjectsQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,7 +91,7 @@ const VectorProjects = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathProjects] = useDeleteClippingPathProjectsMutation();
+  const [deleteClippingPathProjects] = useDeletevectorProjectsMutation();
 
   const handleDeleteHomeBanner = async (id) => {
     const res = await deleteClippingPathProjects(id);

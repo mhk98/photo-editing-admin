@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathHowItWorksMutation, useDeleteclippingPathHowItWorksMutation, useGetAllclippingPathHowItWorksQuery, useUpdateclippingPathHowItWorksMutation } from "../../../features/ClippingPathService/clippingPathHowItWorks/clippingPathHowItWorks";
+import { useCreateimageManipulationHowItWorksMutation, useDeleteimageManipulationHowItWorksMutation, useGetAllimageManipulationHowItWorksQuery, useUpdateimageManipulationHowItWorksMutation } from "../../../features/ImageManipulationService/imageManipulationHowItWorks/imageManipulationHowItWorks";
 
 const ImageManipulationHowItWorks = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const ImageManipulationHowItWorks = () => {
  
 
 
-  const [createclippingPathHowItWorks] = useCreateclippingPathHowItWorksMutation();
+  const [createclippingPathHowItWorks] = useCreateimageManipulationHowItWorksMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -57,7 +57,7 @@ const ImageManipulationHowItWorks = () => {
     }
   };
 
-  const [updateclippingPathHowItWorks] = useUpdateclippingPathHowItWorksMutation();
+  const [updateclippingPathHowItWorks] = useUpdateimageManipulationHowItWorksMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -76,7 +76,7 @@ const ImageManipulationHowItWorks = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathHowItWorksQuery();
+  const { data, isLoading, isError, error } = useGetAllimageManipulationHowItWorksQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +88,10 @@ const ImageManipulationHowItWorks = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPathHowItWorks] = useDeleteclippingPathHowItWorksMutation();
+  const [deleteimageManipulationHowItWorks] = useDeleteimageManipulationHowItWorksMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPathHowItWorks(id);
+    const res = await deleteimageManipulationHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

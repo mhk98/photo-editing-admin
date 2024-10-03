@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathMutation, useDeleteclippingPathMutation, useGetAllclippingPathQuery, useUpdateclippingPathMutation } from "../../../features/ClippingPathService/clippingPath/clippingPath";
+import { useCreatereflectionCreationMutation, useDeletereflectionCreationMutation, useGetAllreflectionCreationQuery, useUpdatereflectionCreationMutation } from "../../../features/ReflectionCreationService/reflectionCreation/reflectionCreation";
 
 
 const ReflectionCreation = () => {
@@ -41,7 +41,7 @@ const ReflectionCreation = () => {
  
 
 
-  const [createclippingPath] = useCreateclippingPathMutation();
+  const [createreflectionCreation] = useCreatereflectionCreationMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -49,7 +49,7 @@ const ReflectionCreation = () => {
     formData.append("image", image);
    
     try {
-      const res = await createclippingPath(formData);
+      const res = await createreflectionCreation(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -58,7 +58,7 @@ const ReflectionCreation = () => {
     }
   };
 
-  const [updateclippingPath] = useUpdateclippingPathMutation();
+  const [updateclippingPath] = useUpdatereflectionCreationMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -77,7 +77,7 @@ const ReflectionCreation = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathQuery();
+  const { data, isLoading, isError, error } = useGetAllreflectionCreationQuery();
 
   useEffect(() => {
     if (isError) {
@@ -89,10 +89,10 @@ const ReflectionCreation = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPath] = useDeleteclippingPathMutation();
+  const [deletereflectionCreation] = useDeletereflectionCreationMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPath(id);
+    const res = await deletereflectionCreation(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

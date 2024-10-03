@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathTestimonialMutation, useDeleteClippingPathTestimonialMutation, useGetAllClippingPathTestimonialQuery, useUpdateClippingPathTestimonialMutation } from "../../../features/ClippingPathService/clippingPathTestimonial/clippingPathTestimonial";
+import { useCreatereflectionCreationTestimonialMutation, useDeletereflectionCreationTestimonialMutation, useGetAllreflectionCreationTestimonialQuery, useUpdatereflectionCreationTestimonialMutation } from "../../../features/ReflectionCreationService/reflectionCreationTestimonial/reflectionCreationTestimonial";
 
 
 const ReflectionCreationTestimonial = () => {
@@ -44,7 +44,7 @@ const ReflectionCreationTestimonial = () => {
     }
   }
 
-  const [createClippingPathTestimonial] = useCreateClippingPathTestimonialMutation();
+  const [createreflectionCreationTestimonial] = useCreatereflectionCreationTestimonialMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -58,7 +58,7 @@ const ReflectionCreationTestimonial = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathTestimonial(formData);
+      const res = await createreflectionCreationTestimonial(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -67,7 +67,7 @@ const ReflectionCreationTestimonial = () => {
     }
   };
 
-  const [updateClippingPathTestimonial] = useUpdateClippingPathTestimonialMutation();
+  const [updatereflectionCreationTestimonial] = useUpdatereflectionCreationTestimonialMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -80,7 +80,7 @@ const ReflectionCreationTestimonial = () => {
  
 
     try {
-      const res = await updateClippingPathTestimonial({ id: updateId, data: formData });
+      const res = await updatereflectionCreationTestimonial({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -91,7 +91,7 @@ const ReflectionCreationTestimonial = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathTestimonialQuery();
+  const { data, isLoading, isError, error } = useGetAllreflectionCreationTestimonialQuery();
 
   useEffect(() => {
     if (isError) {
@@ -103,10 +103,10 @@ const ReflectionCreationTestimonial = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathTestimonial] = useDeleteClippingPathTestimonialMutation();
+  const [deletereflectionCreationTestimonial] = useDeletereflectionCreationTestimonialMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathTestimonial(id);
+    const res = await deletereflectionCreationTestimonial(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }

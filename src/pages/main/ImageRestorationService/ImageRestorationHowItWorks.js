@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathHowItWorksMutation, useDeleteclippingPathHowItWorksMutation, useGetAllclippingPathHowItWorksQuery, useUpdateclippingPathHowItWorksMutation } from "../../../features/ClippingPathService/clippingPathHowItWorks/clippingPathHowItWorks";
+import { useCreateimageRestorationHowItWorksMutation, useDeleteimageRestorationHowItWorksMutation, useGetAllimageRestorationHowItWorksQuery, useUpdateimageRestorationHowItWorksMutation } from "../../../features/ImageRestorationService/imageRestorationHowItWorks/imageRestorationHowItWorks";
 
 const ImageRestorationHowItWorks = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const ImageRestorationHowItWorks = () => {
  
 
 
-  const [createclippingPathHowItWorks] = useCreateclippingPathHowItWorksMutation();
+  const [createclippingPathHowItWorks] = useCreateimageRestorationHowItWorksMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -57,7 +57,7 @@ const ImageRestorationHowItWorks = () => {
     }
   };
 
-  const [updateclippingPathHowItWorks] = useUpdateclippingPathHowItWorksMutation();
+  const [updateimageRestorationHowItWorks] = useUpdateimageRestorationHowItWorksMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -65,7 +65,7 @@ const ImageRestorationHowItWorks = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateclippingPathHowItWorks({ id: updateId, data: formData });
+      const res = await updateimageRestorationHowItWorks({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -76,7 +76,7 @@ const ImageRestorationHowItWorks = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathHowItWorksQuery();
+  const { data, isLoading, isError, error } = useGetAllimageRestorationHowItWorksQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +88,10 @@ const ImageRestorationHowItWorks = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPathHowItWorks] = useDeleteclippingPathHowItWorksMutation();
+  const [deleteimageRestorationHowItWorks] = useDeleteimageRestorationHowItWorksMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPathHowItWorks(id);
+    const res = await deleteimageRestorationHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
