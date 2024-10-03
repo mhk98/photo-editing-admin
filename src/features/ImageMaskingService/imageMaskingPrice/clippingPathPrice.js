@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const imageMaskingPriceApi = createApi({
   reducerPath: "imageMaskingPriceApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1/",
+    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
   }),
 
   tagTypes: ["imageMaskingPrice"], // Define the tag type
