@@ -3,42 +3,42 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const whyChooseUsApi = createApi({
   reducerPath: "whyChooseUsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
+    baseUrl: "http://localhost:5000/api/v1/",
   }),
 
-  tagTypes: ["howItWorks"], // Define the tag type
+  tagTypes: ["whyChooseUs"], // Define the tag type
   endpoints: (build) => ({
     createWhyChooseUs: build.mutation({
       query: (data) => ({
-        url: "/whyChooseUsApi/create",
+        url: "/whyChooseUs/create",
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ["whyChooseUsApi"],
+      invalidatesTags: ["whyChooseUs"],
     }),
 
     deleteWhyChooseUs: build.mutation({
       query: (id) => ({
-        url: `/whyChooseUsApi/${id}`,
+        url: `/whyChooseUs/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["whyChooseUsApi"],
+      invalidatesTags: ["whyChooseUs"],
     }),
 
     updateWhyChooseUs: build.mutation({
       query: ({ id, data }) => ({
-        url: `/whyChooseUsApi/${id}`,
+        url: `/whyChooseUs/${id}`,
         method: "PATCH",
         body: data,
       }),
-      invalidatesTags: ["whyChooseUsApi"],
+      invalidatesTags: ["whyChooseUs"],
     }),
 
     getAllWhyChooseUs: build.query({
       query: () => ({
-        url: "/whyChooseUsApi",
+        url: "/whyChooseUs",
       }),
-      providesTags: ["whyChooseUsApi"],
+      providesTags: ["whyChooseUs"],
 
       refetchOnMountOrArgChange: true,
       pollingInterval: 1000,

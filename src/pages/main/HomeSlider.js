@@ -17,7 +17,7 @@ import {
   useUpdateHomeSliderMutation,
 } from "../../features/homeSlider/homeSlider";
 const HomeSlider = () => {
-  const thead = ["image1", "image2", "image3", "image4", "image5", "action"];
+  const thead = ["image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10", "image11", "image12", "action"];
 
   const { t } = useContext(TranslatorContext);
 
@@ -30,11 +30,26 @@ const HomeSlider = () => {
   const [image3, setImage3] = useState("");
   const [image4, setImage4] = useState("");
   const [image5, setImage5] = useState("");
+  const [image6, setImage6] = useState("");
+  const [image7, setImage7] = useState("");
+  const [image8, setImage8] = useState("");
+  const [image9, setImage9] = useState("");
+  const [image10, setImage10] = useState("");
+  const [image11, setImage11] = useState("");
+  const [image12, setImage12] = useState("");
   const [file1, setFile1] = useState("");
   const [file2, setFile2] = useState("");
   const [file3, setFile3] = useState("");
   const [file4, setFile4] = useState("");
   const [file5, setFile5] = useState("");
+  const [file6, setFile6] = useState("");
+  const [file7, setFile7] = useState("");
+  const [file8, setFile8] = useState("");
+  const [file9, setFile9] = useState("");
+  const [file10, setFile10] = useState("");
+  const [file11, setFile11] = useState("");
+  const [file12, setFile12] = useState("");
+
   const [bannerData, setBannerData] = useState([]);
   const [updateId, setUpdateId] = useState("");
   const handleClose = () => setShow(false);
@@ -73,6 +88,48 @@ const HomeSlider = () => {
       setImage5(e.target.files[0]);
     }
   }
+  function handleChange6(e) {
+    setFile6(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage6(e.target.files[0]);
+    }
+  }
+  function handleChange7(e) {
+    setFile7(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage7(e.target.files[0]);
+    }
+  }
+  function handleChange8(e) {
+    setFile8(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage8(e.target.files[0]);
+    }
+  }
+  function handleChange9(e) {
+    setFile9(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage9(e.target.files[0]);
+    }
+  }
+  function handleChange10(e) {
+    setFile10(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage10(e.target.files[0]);
+    }
+  }
+  function handleChange11(e) {
+    setFile11(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage11(e.target.files[0]);
+    }
+  }
+  function handleChange12(e) {
+    setFile12(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage12(e.target.files[0]);
+    }
+  }
 
   const [createHomeSlider] = useCreateHomeSliderMutation();
 
@@ -84,6 +141,13 @@ const HomeSlider = () => {
     formData.append("image3", image3);
     formData.append("image4", image4);
     formData.append("image5", image5);
+    formData.append("image6", image6);
+    formData.append("image7", image7);
+    formData.append("image8", image8);
+    formData.append("image9", image9);
+    formData.append("image10", image10);
+    formData.append("image11", image11);
+    formData.append("image12", image12);
 
     console.log("homeSlider", formData);
     try {
@@ -106,6 +170,13 @@ const HomeSlider = () => {
     formData.append("image3", image3);
     formData.append("image4", image4);
     formData.append("image5", image5);
+    formData.append("image6", image6);
+    formData.append("image7", image7);
+    formData.append("image8", image8);
+    formData.append("image9", image9);
+    formData.append("image10", image10);
+    formData.append("image11", image11);
+    formData.append("image12", image12);
     try {
       const res = await updateHomeSlider({ id: updateId, data: formData });
       if (res) {
@@ -209,6 +280,7 @@ const HomeSlider = () => {
                       onChange={handleChange4}
                     />
                   </div>
+
                   <div className="mb-3">
                     <label htmlFor="image5" className="form-label">
                       Upload Image 5
@@ -222,6 +294,98 @@ const HomeSlider = () => {
                       onChange={handleChange5}
                     />
                   </div>
+                  <div className="mb-3">
+                    <label htmlFor="image6" className="form-label">
+                      Upload Image 6
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image6"
+                      name="image6"
+                      accept="image/*"
+                      onChange={handleChange6}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image7" className="form-label">
+                      Upload Image 7
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image7"
+                      name="image7"
+                      accept="image/*"
+                      onChange={handleChange7}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image8" className="form-label">
+                      Upload Image 8
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image8"
+                      name="image8"
+                      accept="image/*"
+                      onChange={handleChange8}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image9" className="form-label">
+                      Upload Image 9
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image9"
+                      name="image9"
+                      accept="image/*"
+                      onChange={handleChange9}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image10" className="form-label">
+                      Upload Image 10
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image10"
+                      name="image10"
+                      accept="image/*"
+                      onChange={handleChange10}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image11" className="form-label">
+                      Upload Image 11
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image11"
+                      name="image11"
+                      accept="image/*"
+                      onChange={handleChange11}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image12" className="form-label">
+                      Upload Image 12
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image12"
+                      name="image12"
+                      accept="image/*"
+                      onChange={handleChange12}
+                    />
+                  </div>
+
                   <Button type="submit" variant="primary">
                     Submit
                   </Button>
@@ -258,7 +422,7 @@ const HomeSlider = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -268,7 +432,7 @@ const HomeSlider = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -277,7 +441,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -286,7 +450,7 @@ const HomeSlider = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -295,12 +459,69 @@ const HomeSlider = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
+                          src={`http://localhost:5000/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}
                         />
                       </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image6}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image7}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image8}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image9}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image10}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image11}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image12}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+
                       <td>
                         <div className="mc-table-action">
                           <ButtonComponent
@@ -398,6 +619,99 @@ const HomeSlider = () => {
                         onChange={handleChange5}
                       />
                     </div>
+
+                    <div className="mb-3">
+                    <label htmlFor="image6" className="form-label">
+                      Upload Image 6
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image6"
+                      name="image6"
+                      accept="image/*"
+                      onChange={handleChange6}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image7" className="form-label">
+                      Upload Image 7
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image7"
+                      name="image7"
+                      accept="image/*"
+                      onChange={handleChange7}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image8" className="form-label">
+                      Upload Image 8
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image8"
+                      name="image8"
+                      accept="image/*"
+                      onChange={handleChange8}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image9" className="form-label">
+                      Upload Image 9
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image9"
+                      name="image9"
+                      accept="image/*"
+                      onChange={handleChange9}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image10" className="form-label">
+                      Upload Image 10
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image10"
+                      name="image10"
+                      accept="image/*"
+                      onChange={handleChange10}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image11" className="form-label">
+                      Upload Image 11
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image11"
+                      name="image11"
+                      accept="image/*"
+                      onChange={handleChange11}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image12" className="form-label">
+                      Upload Image 12
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image12"
+                      name="image12"
+                      accept="image/*"
+                      onChange={handleChange12}
+                    />
+                  </div>
+                    
                     <Button type="submit" variant="primary">
                       update
                     </Button>

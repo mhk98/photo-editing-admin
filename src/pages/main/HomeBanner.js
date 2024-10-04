@@ -15,6 +15,7 @@ import {
 import toast from "react-hot-toast";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
+import axios from "axios";
 const HomeBanner = () => {
   const thead = ["image1", "image2", "image3", "image4", "image5", "action"];
 
@@ -113,19 +114,37 @@ const HomeBanner = () => {
     }
   };
 
-  const [homeBannerData, setHomeBannerData] = useState([]);
+  // const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllHomeBannerQuery();
+
+  // const { data, isLoading, isError, error } = useGetAllHomeBannerQuery();
+
+  // useEffect(() => {
+  //   if (isError) {
+  //     console.error("Error fetching health data", error);
+  //   } else if (!isLoading) {
+  //     if (data) {
+  //       setHomeBannerData(data.data);
+  //     }
+  //   }
+  // }, [data, isLoading, isError, error]);
+
+  const [data, setData] = useState([]);
+ 
+  console.log("bgProjects", data);
 
   useEffect(() => {
-    if (isError) {
-      console.error("Error fetching health data", error);
-    } else if (!isLoading) {
-      if (data) {
-        setHomeBannerData(data.data);
-      }
-    }
-  }, [data, isLoading, isError, error]);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/v1/homeBanner'); // Replace with your API endpoint
+        setData(response.data.data);
+      } catch (err) {
+        console.log(err.message);
+      } 
+    };
+
+    fetchData();
+  }, []); 
 
   const [deleteHomeBanner] = useDeleteHomeBannerMutation();
 
@@ -238,7 +257,7 @@ const HomeBanner = () => {
                   </tr>
                 </thead>
                 <tbody className="mc-table-body even">
-                  {homeBannerData?.map((item, index) => (
+                  {data?.map((item, index) => (
                     <tr key={index}>
                       {/* <td title="id">
                         <div className="mc-table-check">
@@ -255,7 +274,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -265,7 +284,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -274,7 +293,7 @@ const HomeBanner = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -283,7 +302,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -292,7 +311,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
+                          src={`http://localhost:5000/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}

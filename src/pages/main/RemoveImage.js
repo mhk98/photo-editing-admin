@@ -25,11 +25,11 @@ const RemoveImage = () => {
   const [blockModal, setBlockModal] = React.useState(false);
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-  const [image1, setImage1] = useState("");
-  const [image2, setImage2] = useState("");
+  const [image, setImage] = useState("");
+  
 
-  const [file1, setFile1] = useState("");
-  const [file2, setFile2] = useState("");
+  const [file, setFile] = useState("");
+ 
 
   const [bannerData, setBannerData] = useState([]);
   const [updateId, setUpdateId] = useState("");
@@ -38,27 +38,22 @@ const RemoveImage = () => {
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
-  function handleChange1(e) {
-    setFile1(URL.createObjectURL(e.target.files[0]));
+  function handleChange(e) {
+    setFile(URL.createObjectURL(e.target.files[0]));
     if (e.target.files && e.target.files.length > 0) {
-      setImage1(e.target.files[0]);
+      setImage(e.target.files[0]);
     }
   }
 
-  function handleChange2(e) {
-    setFile2(URL.createObjectURL(e.target.files[0]));
-    if (e.target.files && e.target.files.length > 0) {
-      setImage2(e.target.files[0]);
-    }
-  }
+  
 
   const [createRemoveImage] = useCreateRemoveImageMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
 
-    formData.append("image1", image1);
-    formData.append("image2", image2);
+    formData.append("image", image);
+
 
     try {
       const res = await createRemoveImage(formData);
@@ -75,8 +70,8 @@ const RemoveImage = () => {
   const onFormEdit = async () => {
     const formData = new FormData();
 
-    formData.append("image1", image1);
-    formData.append("image2", image2);
+    formData.append("image", image);
+
 
     try {
       const res = await updateRemoveImage({ id: updateId, data: formData });
@@ -132,31 +127,19 @@ const RemoveImage = () => {
               <Modal.Body className="p-2 text-center">
                 <form onSubmit={onFormSubmit}>
                   <div className="mb-3">
-                    <label htmlFor="image1" className="form-label">
-                      Upload Image 1
+                    <label htmlFor="image" className="form-label">
+                      Upload Image
                     </label>
                     <input
                       className="form-control"
                       type="file"
-                      id="image1"
-                      name="image1"
+                      id="image"
+                      name="image"
                       accept="image/*"
-                      onChange={handleChange1}
+                      onChange={handleChange}
                     />
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="image2" className="form-label">
-                      Upload Image 2
-                    </label>
-                    <input
-                      className="form-control"
-                      type="file"
-                      id="image2"
-                      name="image2"
-                      accept="image/*"
-                      onChange={handleChange2}
-                    />
-                  </div>
+                  
 
                   <Button type="submit" variant="primary">
                     Submit
@@ -194,23 +177,14 @@ const RemoveImage = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image}`}
                             alt=""
                             width={80}
                             height={60}
                           />
                         </div>
                       </td>
-                      <td>
-                        <div className="mc-table-icon role">
-                          <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
-                            alt=""
-                            width={80}
-                            height={60}
-                          />
-                        </div>
-                      </td>
+                     
 
                       <td>
                         <div className="mc-table-action">
@@ -245,31 +219,19 @@ const RemoveImage = () => {
                 <Modal.Body className="p-2 text-center">
                   <form onSubmit={onFormEdit}>
                     <div className="mb-3">
-                      <label htmlFor="image1" className="form-label">
-                        Upload Image 1
+                      <label htmlFor="image" className="form-label">
+                        Upload Image
                       </label>
                       <input
                         className="form-control"
                         type="file"
-                        id="image1"
-                        name="image1"
+                        id="image"
+                        name="image"
                         accept="image/*"
-                        onChange={handleChange1}
+                        onChange={handleChange}
                       />
                     </div>
-                    <div className="mb-3">
-                      <label htmlFor="image2" className="form-label">
-                        Upload Image 2
-                      </label>
-                      <input
-                        className="form-control"
-                        type="file"
-                        id="image2"
-                        name="image2"
-                        accept="image/*"
-                        onChange={handleChange2}
-                      />
-                    </div>
+                   
 
                     <Button type="submit" variant="primary">
                       update

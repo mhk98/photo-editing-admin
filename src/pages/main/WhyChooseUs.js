@@ -28,9 +28,15 @@ const WhyChooseUs = () => {
   const [show1, setShow1] = useState(false);
   const [image1, setImage1] = useState("");
   const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
+  const [image5, setImage5] = useState("");
 
   const [file1, setFile1] = useState("");
   const [file2, setFile2] = useState("");
+  const [file3, setFile3] = useState("");
+  const [file4, setFile4] = useState("");
+  const [file5, setFile5] = useState("");
 
   const [bannerData, setBannerData] = useState([]);
   const [updateId, setUpdateId] = useState("");
@@ -53,6 +59,25 @@ const WhyChooseUs = () => {
     }
   }
 
+  function handleChange3(e) {
+    setFile3(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage3(e.target.files[0]);
+    }
+  }
+  function handleChange4(e) {
+    setFile4(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage4(e.target.files[0]);
+    }
+  }
+  function handleChange5(e) {
+    setFile5(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage5(e.target.files[0]);
+    }
+  }
+
   const [createWhyChooseUs] = useCreateWhyChooseUsMutation();
 
   const onFormSubmit = async () => {
@@ -60,6 +85,9 @@ const WhyChooseUs = () => {
 
     formData.append("image1", image1);
     formData.append("image2", image2);
+    formData.append("image3", image3);
+    formData.append("image4", image4);
+    formData.append("image5", image5);
 
     console.log("homeSlider", formData);
     try {
@@ -79,6 +107,9 @@ const WhyChooseUs = () => {
 
     formData.append("image1", image1);
     formData.append("image2", image2);
+    formData.append("image3", image3);
+    formData.append("image4", image4);
+    formData.append("image5", image5);
 
     try {
       const res = await updateWhyChooseUs({ id: updateId, data: formData });
@@ -157,6 +188,45 @@ const WhyChooseUs = () => {
                       onChange={handleChange2}
                     />
                   </div>
+                  <div className="mb-3">
+                    <label htmlFor="image3" className="form-label">
+                      Upload Image 3
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image3"
+                      name="image3"
+                      accept="image/*"
+                      onChange={handleChange3}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image4" className="form-label">
+                      Upload Image 4
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image4"
+                      name="image4"
+                      accept="image/*"
+                      onChange={handleChange4}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image5" className="form-label">
+                      Upload Image 5
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image5"
+                      name="image5"
+                      accept="image/*"
+                      onChange={handleChange5}
+                    />
+                  </div>
 
                   <Button type="submit" variant="primary">
                     Submit
@@ -194,7 +264,7 @@ const WhyChooseUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -204,7 +274,7 @@ const WhyChooseUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -213,7 +283,7 @@ const WhyChooseUs = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -222,7 +292,7 @@ const WhyChooseUs = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -231,7 +301,7 @@ const WhyChooseUs = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
+                          src={`http://localhost:5000/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}
@@ -296,6 +366,46 @@ const WhyChooseUs = () => {
                       />
                     </div>
 
+                    <div className="mb-3">
+                    <label htmlFor="image3" className="form-label">
+                      Upload Image 3
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image3"
+                      name="image3"
+                      accept="image/*"
+                      onChange={handleChange3}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image4" className="form-label">
+                      Upload Image 4
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image4"
+                      name="image4"
+                      accept="image/*"
+                      onChange={handleChange4}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image5" className="form-label">
+                      Upload Image 5
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image5"
+                      name="image5"
+                      accept="image/*"
+                      onChange={handleChange5}
+                    />
+                  </div>
+                  
                     <Button type="submit" variant="primary">
                       update
                     </Button>

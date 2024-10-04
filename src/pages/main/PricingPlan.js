@@ -240,7 +240,7 @@ const PricingPlan = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -250,7 +250,7 @@ const PricingPlan = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -259,7 +259,7 @@ const PricingPlan = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -268,21 +268,14 @@ const PricingPlan = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
                         />
                       </td>
 
-                      <td>
-                        <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
-                          alt=""
-                          width={80}
-                          height={60}
-                        />
-                      </td>
+                  
                       <td>
                         <div className="mc-table-action">
                           <ButtonComponent
