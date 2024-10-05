@@ -14,7 +14,8 @@ import { useCreateimageRestorationMutation, useDeleteimageRestorationMutation, u
 
 
 const ImageRestoration = () => {
-  const thead = ["image", "action"];
+  const thead = ["image1", "image2", "action"];
+
 
   const { t } = useContext(TranslatorContext);
 
@@ -22,8 +23,10 @@ const ImageRestoration = () => {
   const [blockModal, setBlockModal] = React.useState(false);
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-  const [image, setImage] = useState("");
-  const [file, setFile] = useState("");
+  const [image1, setImage1] = useState("");
+  const [image2, setImage2] = useState("");
+  const [file1, setFile1] = useState("");
+  const [file2, setFile2] = useState("");
 
   const [bannerData, setBannerData] = useState([]);
   const [updateId, setUpdateId] = useState("");
@@ -32,10 +35,16 @@ const ImageRestoration = () => {
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
 
-  function handleChange(e) {
-    setFile(URL.createObjectURL(e.target.files[0]));
+  function handleChange1(e) {
+    setFile1(URL.createObjectURL(e.target.files[0]));
     if (e.target.files && e.target.files.length > 0) {
-      setImage(e.target.files[0]);
+      setImage1(e.target.files[0]);
+    }
+  }
+  function handleChange2(e) {
+    setFile2(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage2(e.target.files[0]);
     }
   }
 
@@ -47,7 +56,8 @@ const ImageRestoration = () => {
   const onFormSubmit = async () => {
     const formData = new FormData();
 
-    formData.append("image", image);
+    formData.append("image1", image1);
+    formData.append("image2", image2);
    
     try {
       const res = await createimageRestoration(formData);
@@ -64,7 +74,8 @@ const ImageRestoration = () => {
   const onFormEdit = async () => {
     const formData = new FormData();
 
-    formData.append("image", image);
+    formData.append("image1", image1);
+    formData.append("image2", image2);
     
     try {
       const res = await updateimageRestoration({ id: updateId, data: formData });
@@ -117,17 +128,30 @@ const ImageRestoration = () => {
               </Modal.Header>
               <Modal.Body className="p-2 text-center">
                 <form onSubmit={onFormSubmit}>
-                  <div className="mb-3">
+                <div className="mb-3">
                     <label htmlFor="image1" className="form-label">
-                      Upload Image 
+                      Upload Image 1
                     </label>
                     <input
                       className="form-control"
                       type="file"
-                      id="image"
-                      name="image"
+                      id="image1"
+                      name="image1"
                       accept="image/*"
-                      onChange={handleChange}
+                      onChange={handleChange1}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image2" className="form-label">
+                      Upload Image 2
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image2"
+                      name="image2"
+                      accept="image/*"
+                      onChange={handleChange2}
                     />
                   </div>
                   <Button type="submit" variant="primary">
@@ -166,7 +190,17 @@ const ImageRestoration = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`http://localhost:5000/${item.image1}`}
+                            alt=""
+                            width={80}
+                            height={60}
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <div className="mc-table-icon role">
+                          <img
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -206,19 +240,32 @@ const ImageRestoration = () => {
                 </Modal.Header>
                 <Modal.Body className="p-2 text-center">
                   <form onSubmit={onFormEdit}>
-                    <div className="mb-3">
-                      <label htmlFor="image" className="form-label">
-                        Upload Image 
-                      </label>
-                      <input
-                        className="form-control"
-                        type="file"
-                        id="image"
-                        name="image"
-                        accept="image/*"
-                        onChange={handleChange}
-                      />
-                    </div>
+                  <div className="mb-3">
+                    <label htmlFor="image1" className="form-label">
+                      Upload Image 1
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image1"
+                      name="image1"
+                      accept="image/*"
+                      onChange={handleChange1}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="image2" className="form-label">
+                      Upload Image 2
+                    </label>
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="image2"
+                      name="image2"
+                      accept="image/*"
+                      onChange={handleChange2}
+                    />
+                  </div>
 
                     <Button type="submit" variant="primary">
                       update
