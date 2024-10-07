@@ -9,7 +9,8 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathMutation, useDeleteclippingPathMutation, useGetAllclippingPathQuery, useUpdateclippingPathMutation } from "../../../features/ClippingPathService/clippingPath/clippingPath";
+import { useCreateimageRetouchingMutation, useDeleteimageRetouchingMutation, useGetAllimageRetouchingQuery, useUpdateimageRetouchingMutation } from "../../../features/ImageRetouchingService/imageRetouching/imageRetouching";
+
 
 
 const ImageRetouching = () => {
@@ -50,7 +51,7 @@ const ImageRetouching = () => {
  
 
 
-  const [createclippingPath] = useCreateclippingPathMutation();
+  const [createimageRetouching] = useCreateimageRetouchingMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -59,7 +60,7 @@ const ImageRetouching = () => {
     formData.append("image2", image2);
    
     try {
-      const res = await createclippingPath(formData);
+      const res = await createimageRetouching(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -68,7 +69,7 @@ const ImageRetouching = () => {
     }
   };
 
-  const [updateclippingPath] = useUpdateclippingPathMutation();
+  const [updateimageRetouching] = useUpdateimageRetouchingMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -77,7 +78,7 @@ const ImageRetouching = () => {
     formData.append("image2", image2);
     
     try {
-      const res = await updateclippingPath({ id: updateId, data: formData });
+      const res = await updateimageRetouching({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -88,7 +89,7 @@ const ImageRetouching = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathQuery();
+  const { data, isLoading, isError, error } = useGetAllimageRetouchingQuery();
 
   useEffect(() => {
     if (isError) {
@@ -100,10 +101,10 @@ const ImageRetouching = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPath] = useDeleteclippingPathMutation();
+  const [deleteimageRetouching] = useDeleteimageRetouchingMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPath(id);
+    const res = await deleteimageRetouching(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
@@ -189,7 +190,7 @@ const ImageRetouching = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image1}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -199,7 +200,7 @@ const ImageRetouching = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image2}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}

@@ -422,7 +422,7 @@ const HomeSlider = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image1}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -432,7 +432,7 @@ const HomeSlider = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image2}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -441,7 +441,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image3}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -450,7 +450,7 @@ const HomeSlider = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image4}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -459,7 +459,7 @@ const HomeSlider = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image5}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}
@@ -467,7 +467,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image6}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image6}`}
                           alt=""
                           width={80}
                           height={60}
@@ -475,7 +475,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image7}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image7}`}
                           alt=""
                           width={80}
                           height={60}
@@ -483,7 +483,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image8}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image8}`}
                           alt=""
                           width={80}
                           height={60}
@@ -491,7 +491,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image9}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image9}`}
                           alt=""
                           width={80}
                           height={60}
@@ -499,7 +499,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image10}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image10}`}
                           alt=""
                           width={80}
                           height={60}
@@ -507,7 +507,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image11}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image11}`}
                           alt=""
                           width={80}
                           height={60}
@@ -515,7 +515,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image12}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image12}`}
                           alt=""
                           width={80}
                           height={60}
