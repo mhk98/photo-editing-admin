@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathPriceMutation, useDeleteClippingPathPriceMutation, useGetAllClippingPathPriceQuery, useUpdateClippingPathPriceMutation } from "../../../features/ClippingPathService/clippingPathPrice/clippingPathPrice";
+import { useDeleteimageRetouchingPriceMutation, useGetAllimageRetouchingPriceQuery, useUpdateimageRetouchingPriceMutation } from "../../../features/ImageRetouchingService/imageRetouchingPrice/imageRetouchingPrice";
 
 const ImageRetouchingPrice = () => {
   const thead = ["Image", "Title","Price", "Feature1", "Feature2", "Feature3", "Feature4", "action"];
@@ -45,7 +45,7 @@ const ImageRetouchingPrice = () => {
     }
   }
 
-  const [createClippingPathPrice] = useCreateClippingPathPriceMutation();
+  const [createimageRetouchingPrice] = useGetAllimageRetouchingPriceQuery();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -60,7 +60,7 @@ const ImageRetouchingPrice = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathPrice(formData);
+      const res = await createimageRetouchingPrice(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -69,7 +69,7 @@ const ImageRetouchingPrice = () => {
     }
   };
 
-  const [updateClippingPathPrice] = useUpdateClippingPathPriceMutation();
+  const [updateimageRetouchingPrice] = useUpdateimageRetouchingPriceMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -83,7 +83,7 @@ const ImageRetouchingPrice = () => {
     formData.append("feature4", feature4);
 
     try {
-      const res = await updateClippingPathPrice({ id: updateId, data: formData });
+      const res = await updateimageRetouchingPrice({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -94,7 +94,7 @@ const ImageRetouchingPrice = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathPriceQuery();
+  const { data, isLoading, isError, error } = useGetAllimageRetouchingPriceQuery();
 
   useEffect(() => {
     if (isError) {
@@ -106,10 +106,10 @@ const ImageRetouchingPrice = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathPrice] = useDeleteClippingPathPriceMutation();
+  const [deleteimageRetouchingPrice] = useDeleteimageRetouchingPriceMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathPrice(id);
+    const res = await deleteimageRetouchingPrice(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
@@ -256,7 +256,7 @@ const ImageRetouchingPrice = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

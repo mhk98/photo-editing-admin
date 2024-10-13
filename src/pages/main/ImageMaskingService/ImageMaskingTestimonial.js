@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathTestimonialMutation, useDeleteClippingPathTestimonialMutation, useGetAllClippingPathTestimonialQuery, useUpdateClippingPathTestimonialMutation } from "../../../features/ClippingPathService/clippingPathTestimonial/clippingPathTestimonial";
+import { useCreateimageMaskingTestimonialMutation, useDeleteimageMaskingTestimonialMutation, useGetAllimageMaskingTestimonialQuery, useUpdateimageMaskingTestimonialMutation } from "../../../features/ImageMaskingService/imageMaskingTestimonial/imageMaskingTestimonial";
 
 
 const ImageMaskingTestimonial = () => {
@@ -44,7 +44,7 @@ const ImageMaskingTestimonial = () => {
     }
   }
 
-  const [createClippingPathTestimonial] = useCreateClippingPathTestimonialMutation();
+  const [createClippingPathTestimonial] = useCreateimageMaskingTestimonialMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -67,7 +67,7 @@ const ImageMaskingTestimonial = () => {
     }
   };
 
-  const [updateClippingPathTestimonial] = useUpdateClippingPathTestimonialMutation();
+  const [updateimageMaskingTestimonial] = useUpdateimageMaskingTestimonialMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -80,7 +80,7 @@ const ImageMaskingTestimonial = () => {
  
 
     try {
-      const res = await updateClippingPathTestimonial({ id: updateId, data: formData });
+      const res = await updateimageMaskingTestimonial({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -91,7 +91,7 @@ const ImageMaskingTestimonial = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathTestimonialQuery();
+  const { data, isLoading, isError, error } = useGetAllimageMaskingTestimonialQuery();
 
   useEffect(() => {
     if (isError) {
@@ -103,10 +103,10 @@ const ImageMaskingTestimonial = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathTestimonial] = useDeleteClippingPathTestimonialMutation();
+  const [deleteimageMaskingTestimonial] = useDeleteimageMaskingTestimonialMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathTestimonial(id);
+    const res = await deleteimageMaskingTestimonial(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
@@ -229,7 +229,7 @@ const ImageMaskingTestimonial = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

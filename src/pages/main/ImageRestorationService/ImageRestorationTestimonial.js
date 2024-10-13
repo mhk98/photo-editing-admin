@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateClippingPathTestimonialMutation, useDeleteClippingPathTestimonialMutation, useGetAllClippingPathTestimonialQuery, useUpdateClippingPathTestimonialMutation } from "../../../features/ClippingPathService/clippingPathTestimonial/clippingPathTestimonial";
+import { useCreateimageRestorationTestimonialMutation, useDeleteimageRestorationTestimonialMutation, useGetAllimageRestorationTestimonialQuery, useUpdateimageRestorationTestimonialMutation } from "../../../features/ImageRestorationService/imageRestorationTestimonial/imageRestorationTestimonial";
 
 
 const ImageRestorationTestimonial = () => {
@@ -44,7 +44,7 @@ const ImageRestorationTestimonial = () => {
     }
   }
 
-  const [createClippingPathTestimonial] = useCreateClippingPathTestimonialMutation();
+  const [createimageRestorationTestimonial] = useCreateimageRestorationTestimonialMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -58,7 +58,7 @@ const ImageRestorationTestimonial = () => {
 
     console.log("aboutUs", formData);
     try {
-      const res = await createClippingPathTestimonial(formData);
+      const res = await createimageRestorationTestimonial(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -67,7 +67,7 @@ const ImageRestorationTestimonial = () => {
     }
   };
 
-  const [updateClippingPathTestimonial] = useUpdateClippingPathTestimonialMutation();
+  const [updateimageRestorationTestimonial] = useUpdateimageRestorationTestimonialMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -80,7 +80,7 @@ const ImageRestorationTestimonial = () => {
  
 
     try {
-      const res = await updateClippingPathTestimonial({ id: updateId, data: formData });
+      const res = await updateimageRestorationTestimonial({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -91,7 +91,7 @@ const ImageRestorationTestimonial = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllClippingPathTestimonialQuery();
+  const { data, isLoading, isError, error } = useGetAllimageRestorationTestimonialQuery();
 
   useEffect(() => {
     if (isError) {
@@ -103,10 +103,10 @@ const ImageRestorationTestimonial = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteClippingPathTestimonial] = useDeleteClippingPathTestimonialMutation();
+  const [deleteimageRestorationTestimonial] = useDeleteimageRestorationTestimonialMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteClippingPathTestimonial(id);
+    const res = await deleteimageRestorationTestimonial(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
@@ -229,7 +229,7 @@ const ImageRestorationTestimonial = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

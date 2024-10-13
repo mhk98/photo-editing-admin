@@ -43,7 +43,6 @@ import { imageManipulationProjectsApi } from "../features/ImageManipulationServi
 import { imageManipulationTestimonialApi } from "../features/ImageManipulationService/imageManipulationTestimonial/imageManipulationTestimonial";
 import { imageMaskingApi } from "../features/ImageMaskingService/imageMasking/imageMasking";
 import { imageMaskingHowItWorksApi } from "../features/ImageMaskingService/imageMaskingHowItWorks/imageMaskingHowItWorks";
-import { imageMaskingPriceApi } from "../features/ImageMaskingService/imageMaskingPrice/clippingPathPrice";
 import { imageMaskingTestimonialApi } from "../features/ImageMaskingService/imageMaskingTestimonial/imageMaskingTestimonial";
 import { imageRestorationApi } from "../features/ImageRestorationService/imageRestoration/imageRestoration";
 import { imageRestorationHowItWorksApi } from "../features/ImageRestorationService/imageRestorationHowItWorks/imageRestorationHowItWorks";
@@ -72,6 +71,7 @@ import { vectorProjectsApi } from "../features/VectorService/vectorProjects/vect
 import { vectorTestimonialApi } from "../features/VectorService/vectorTestimonial/vectorTestimonial";
 import { BackgroundRemovalProjectsApi } from "../features/BackgroundRemovalService/backgroundRemovalProjects/backgroundRemovalProjects";
 import { imageMaskingProjectsApi } from "../features/ImageMaskingService/imageMaskingProjects/imageMaskingProjects";
+import { imageMaskingPriceApi } from "../features/ImageMaskingService/imageMaskingPrice/imageMaskingPrice";
 
 
 

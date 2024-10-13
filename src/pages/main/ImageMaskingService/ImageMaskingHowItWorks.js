@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathHowItWorksMutation, useDeleteclippingPathHowItWorksMutation, useGetAllclippingPathHowItWorksQuery, useUpdateclippingPathHowItWorksMutation } from "../../../features/ClippingPathService/clippingPathHowItWorks/clippingPathHowItWorks";
+import { useCreateimageMaskingHowItWorksMutation, useDeleteimageMaskingHowItWorksMutation, useGetAllimageMaskingHowItWorksQuery, useUpdateimageMaskingHowItWorksMutation } from "../../../features/ImageMaskingService/imageMaskingHowItWorks/imageMaskingHowItWorks";
 
 const ImageMaskingHowItWorks = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const ImageMaskingHowItWorks = () => {
  
 
 
-  const [createclippingPathHowItWorks] = useCreateclippingPathHowItWorksMutation();
+  const [createimageMaskingHowItWorks] = useCreateimageMaskingHowItWorksMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -48,7 +48,7 @@ const ImageMaskingHowItWorks = () => {
     formData.append("image", image);
    
     try {
-      const res = await createclippingPathHowItWorks(formData);
+      const res = await createimageMaskingHowItWorks(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -57,7 +57,7 @@ const ImageMaskingHowItWorks = () => {
     }
   };
 
-  const [updateclippingPathHowItWorks] = useUpdateclippingPathHowItWorksMutation();
+  const [updateimageMaskingHowItWorks] = useUpdateimageMaskingHowItWorksMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -65,7 +65,7 @@ const ImageMaskingHowItWorks = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateclippingPathHowItWorks({ id: updateId, data: formData });
+      const res = await updateimageMaskingHowItWorks({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -76,7 +76,7 @@ const ImageMaskingHowItWorks = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathHowItWorksQuery();
+  const { data, isLoading, isError, error } = useGetAllimageMaskingHowItWorksQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +88,10 @@ const ImageMaskingHowItWorks = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPathHowItWorks] = useDeleteclippingPathHowItWorksMutation();
+  const [deleteimageMaskingHowItWorks] = useDeleteimageMaskingHowItWorksMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPathHowItWorks(id);
+    const res = await deleteimageMaskingHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
@@ -164,7 +164,7 @@ const ImageMaskingHowItWorks = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

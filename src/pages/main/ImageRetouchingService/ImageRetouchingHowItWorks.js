@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useCreateclippingPathHowItWorksMutation, useDeleteclippingPathHowItWorksMutation, useGetAllclippingPathHowItWorksQuery, useUpdateclippingPathHowItWorksMutation } from "../../../features/ClippingPathService/clippingPathHowItWorks/clippingPathHowItWorks";
+import { useCreateimageRetouchingHowItWorksMutation, useDeleteimageRetouchingHowItWorksMutation, useGetAllimageRetouchingHowItWorksQuery, useUpdateimageRetouchingHowItWorksMutation } from "../../../features/ImageRetouchingService/imageRetouchingHowItWorks/imageRetouchingHowItWorks";
 
 const ImageRetouchingHowItWorks = () => {
   const thead = ["image",  "action"];
@@ -40,7 +40,7 @@ const ImageRetouchingHowItWorks = () => {
  
 
 
-  const [createclippingPathHowItWorks] = useCreateclippingPathHowItWorksMutation();
+  const [createimageRetouchingHowItWorks] = useCreateimageRetouchingHowItWorksMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -48,7 +48,7 @@ const ImageRetouchingHowItWorks = () => {
     formData.append("image", image);
    
     try {
-      const res = await createclippingPathHowItWorks(formData);
+      const res = await createimageRetouchingHowItWorks(formData);
       if (res) {
         toast.success(res.info.message);
       }
@@ -57,7 +57,7 @@ const ImageRetouchingHowItWorks = () => {
     }
   };
 
-  const [updateclippingPathHowItWorks] = useUpdateclippingPathHowItWorksMutation();
+  const [updateimageRetouchingHowItWorks] = useUpdateimageRetouchingHowItWorksMutation();
 
   const onFormEdit = async () => {
     const formData = new FormData();
@@ -65,7 +65,7 @@ const ImageRetouchingHowItWorks = () => {
     formData.append("image", image);
     
     try {
-      const res = await updateclippingPathHowItWorks({ id: updateId, data: formData });
+      const res = await updateimageRetouchingHowItWorks({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
       }
@@ -76,7 +76,7 @@ const ImageRetouchingHowItWorks = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
-  const { data, isLoading, isError, error } = useGetAllclippingPathHowItWorksQuery();
+  const { data, isLoading, isError, error } = useGetAllimageRetouchingHowItWorksQuery();
 
   useEffect(() => {
     if (isError) {
@@ -88,10 +88,10 @@ const ImageRetouchingHowItWorks = () => {
     }
   }, [data, isLoading, isError, error]);
 
-  const [deleteclippingPathHowItWorks] = useDeleteclippingPathHowItWorksMutation();
+  const [deleteimageRetouchingHowItWorks] = useDeleteimageRetouchingHowItWorksMutation();
 
   const handleDeleteHomeBanner = async (id) => {
-    const res = await deleteclippingPathHowItWorks(id);
+    const res = await deleteimageRetouchingHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
@@ -164,7 +164,7 @@ const ImageRetouchingHowItWorks = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

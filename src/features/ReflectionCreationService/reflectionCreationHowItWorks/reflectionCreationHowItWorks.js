@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const reflectionCreationHowItWorksApi = createApi({
   reducerPath: "reflectionCreationHowItWorksApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api/v1/",
+    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
   }),
 
   tagTypes: ["reflectionCreationHowItWorks"], // Define the tag type
