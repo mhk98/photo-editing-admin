@@ -136,7 +136,7 @@ const HomeBanner = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://photo-editing-backend.onrender.com/api/v1/homeBanner'); // Replace with your API endpoint
+        const response = await axios.get('http://82.112.226.90:5000/api/v1/homeBanner'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -274,7 +274,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://82.112.226.90:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -284,7 +284,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`http://82.112.226.90:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -293,7 +293,7 @@ const HomeBanner = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
+                          src={`http://82.112.226.90:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -302,7 +302,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
+                          src={`http://82.112.226.90:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -311,7 +311,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
+                          src={`http://82.112.226.90:5000/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}

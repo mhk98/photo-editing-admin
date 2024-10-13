@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const imageRestorationPriceApi = createApi({
   reducerPath: "imageRestorationPriceApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
+    baseUrl: "http://82.112.226.90:5000/api/v1/",
   }),
 
   tagTypes: ["imageRestorationPrice"], // Define the tag type

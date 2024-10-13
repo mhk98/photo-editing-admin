@@ -189,7 +189,7 @@ const ReflectionCreation = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`http://82.112.226.90:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -199,7 +199,7 @@ const ReflectionCreation = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`http://82.112.226.90:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}

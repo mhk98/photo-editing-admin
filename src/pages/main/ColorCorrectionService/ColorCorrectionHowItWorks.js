@@ -83,7 +83,7 @@ const ColorCorrectionHowItWorks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://photo-editing-backend.onrender.com/api/v1/colorCorrectionHowItWorks'); // Replace with your API endpoint
+        const response = await axios.get('http://82.112.226.90:5000/api/v1/colorCorrectionHowItWorks'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -169,7 +169,7 @@ const ColorCorrectionHowItWorks = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
+                            src={`http://82.112.226.90:5000/${item.image}`}
                             alt=""
                             width={80}
                             height={60}
