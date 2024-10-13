@@ -217,7 +217,7 @@ const Testimonial = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://82.112.226.90:5000/${item.image1}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -227,7 +227,7 @@ const Testimonial = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://82.112.226.90:5000/${item.image2}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -236,7 +236,7 @@ const Testimonial = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://82.112.226.90:5000/${item.image3}`}
+                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}

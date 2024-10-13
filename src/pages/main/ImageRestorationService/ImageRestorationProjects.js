@@ -164,7 +164,7 @@ const ImageRestorationProjects = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://82.112.226.90:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

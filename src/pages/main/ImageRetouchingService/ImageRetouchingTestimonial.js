@@ -91,6 +91,8 @@ const ImageRetouchingTestimonial = () => {
 
   const [homeBannerData, setHomeBannerData] = useState([]);
 
+  console.log('Testimonaila', homeBannerData)
+
   const { data, isLoading, isError, error } = useGetAllClippingPathTestimonialQuery();
 
   useEffect(() => {
@@ -98,7 +100,7 @@ const ImageRetouchingTestimonial = () => {
       console.error("Error fetching health data", error);
     } else if (!isLoading) {
       if (data) {
-        setAboutUs(data.data);
+        setHomeBannerData(data.data);
       }
     }
   }, [data, isLoading, isError, error]);
@@ -212,7 +214,7 @@ const ImageRetouchingTestimonial = () => {
                   </tr>
                 </thead>
                 <tbody className="mc-table-body even">
-                  {aboutUs?.map((item, index) => (
+                  {homeBannerData?.map((item, index) => (
                     <tr key={index}>
                       {/* <td title="id">
                         <div className="mc-table-check">
@@ -229,7 +231,7 @@ const ImageRetouchingTestimonial = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://82.112.226.90:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

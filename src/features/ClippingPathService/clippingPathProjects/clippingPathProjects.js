@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const clippingPathProjectsApi = createApi({
   reducerPath: "clippingPathProjectsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://82.112.226.90:5000/api/v1/",
+    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
   }),
 
   tagTypes: ["clippingPathProjects"], // Define the tag type

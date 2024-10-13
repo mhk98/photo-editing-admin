@@ -114,7 +114,7 @@ const ColorCorrectionPrice = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://82.112.226.90:5000/api/v1/colorCorrectionPrice'); // Replace with your API endpoint
+        const response = await axios.get('https://photo-editing-backend.onrender.com/api/v1/colorCorrectionPrice'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -274,7 +274,7 @@ const ColorCorrectionPrice = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://82.112.226.90:5000/${item.image}`}
+                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}
