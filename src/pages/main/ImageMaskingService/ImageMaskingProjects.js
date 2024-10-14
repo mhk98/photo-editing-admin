@@ -97,7 +97,7 @@ const ImageMaskingProjects = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://photo-editing-backend.onrender.com/api/v1/imageMaskingProjects'); // Replace with your API endpoint
+        const response = await axios.get('https://api.pixamoss.com/api/v1/imageMaskingProjects'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -183,7 +183,7 @@ const ImageMaskingProjects = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

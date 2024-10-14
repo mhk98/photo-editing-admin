@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const imageRetouchingTestimonialApi = createApi({
   reducerPath: "imageRetouchingTestimonialApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
+    baseUrl: "https://api.pixamoss.com/api/v1/",
   }),
 
   tagTypes: ["imageRetouchingTestimonial"], // Define the tag type

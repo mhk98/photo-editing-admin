@@ -190,7 +190,7 @@ const ImageRestoration = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`https://api.pixamoss.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -200,7 +200,7 @@ const ImageRestoration = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`https://api.pixamoss.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}

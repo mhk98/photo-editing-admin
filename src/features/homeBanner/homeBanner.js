@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const homeBannerApi = createApi({
   reducerPath: "homeBannerApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://photo-editing-backend.onrender.com/api/v1/",
+    baseUrl: "https://api.pixamoss.com/api/v1/",
   }),
 
   tagTypes: ["banner"], // Define the tag type

@@ -10,6 +10,7 @@ import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
 import { useCreateclippingPathMutation, useDeleteclippingPathMutation, useGetAllclippingPathQuery, useUpdateclippingPathMutation } from "../../../features/ClippingPathService/clippingPath/clippingPath";
+import baseUrl from "../../../config/config";
 
 
 const ClippingPath = () => {
@@ -188,7 +189,7 @@ const ClippingPath = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`${baseUrl}${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -198,7 +199,7 @@ const ClippingPath = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`${baseUrl}${item.image2}`}
                             alt=""
                             width={80}
                             height={60}

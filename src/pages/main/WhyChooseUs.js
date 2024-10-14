@@ -264,7 +264,7 @@ const WhyChooseUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image1}`}
+                            src={`https://api.pixamoss.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -274,7 +274,7 @@ const WhyChooseUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image2}`}
+                            src={`https://api.pixamoss.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -283,7 +283,7 @@ const WhyChooseUs = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image3}`}
+                          src={`https://api.pixamoss.com/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -292,7 +292,7 @@ const WhyChooseUs = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image4}`}
+                          src={`https://api.pixamoss.com/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -301,7 +301,7 @@ const WhyChooseUs = () => {
 
                       <td>
                         <img
-                          src={`https://photo-editing-backend.onrender.com/${item.image5}`}
+                          src={`https://api.pixamoss.com/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}

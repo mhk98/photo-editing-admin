@@ -229,7 +229,7 @@ const ImageMaskingTestimonial = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://photo-editing-backend.onrender.com/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}
