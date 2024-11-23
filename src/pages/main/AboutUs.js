@@ -116,7 +116,7 @@ const AboutUs = () => {
 
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton className="text-center p-3">
-                <Modal.Title className="w-100">Home Banner</Modal.Title>
+                <Modal.Title className="w-100">Home About Us</Modal.Title>
               </Modal.Header>
               <Modal.Body className="p-2 text-center">
                 <form onSubmit={onFormSubmit}>
@@ -170,7 +170,7 @@ const AboutUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image}`}
+                            src={`http://localhost:5000/${item.image}`}
                             alt=""
                             width={80}
                             height={60}
@@ -206,7 +206,7 @@ const AboutUs = () => {
 
               <Modal show={show1} onHide={handleClose1}>
                 <Modal.Header closeButton className="text-center p-3">
-                  <Modal.Title className="w-100">Home Banner</Modal.Title>
+                  <Modal.Title className="w-100">Home About Us</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="p-2 text-center">
                   <form onSubmit={onFormEdit}>

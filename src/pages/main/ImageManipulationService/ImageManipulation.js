@@ -189,7 +189,7 @@ const ImageManipulation = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -199,7 +199,7 @@ const ImageManipulation = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}

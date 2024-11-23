@@ -165,7 +165,7 @@ const ShadowCreationHowItWorks = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image}`}
+                            src={`http://localhost:5000/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

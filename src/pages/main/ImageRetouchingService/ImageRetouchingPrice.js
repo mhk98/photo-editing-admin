@@ -9,7 +9,7 @@ import PageLayout from "../../../layouts/PageLayout";
 import { ButtonComponent } from "../../../components/elements";
 import { TranslatorContext } from "../../../context/Translator";
 import { PaginationComponent } from "../../../components";
-import { useDeleteimageRetouchingPriceMutation, useGetAllimageRetouchingPriceQuery, useUpdateimageRetouchingPriceMutation } from "../../../features/ImageRetouchingService/imageRetouchingPrice/imageRetouchingPrice";
+import { useCreateimageRetouchingPriceMutation, useDeleteimageRetouchingPriceMutation, useGetAllimageRetouchingPriceQuery, useUpdateimageRetouchingPriceMutation } from "../../../features/ImageRetouchingService/imageRetouchingPrice/imageRetouchingPrice";
 
 const ImageRetouchingPrice = () => {
   const thead = ["Image", "Title","Price", "Feature1", "Feature2", "Feature3", "Feature4", "action"];
@@ -45,7 +45,7 @@ const ImageRetouchingPrice = () => {
     }
   }
 
-  const [createimageRetouchingPrice] = useGetAllimageRetouchingPriceQuery();
+  const [createimageRetouchingPrice] = useCreateimageRetouchingPriceMutation();
 
   const onFormSubmit = async () => {
     const formData = new FormData();
@@ -256,7 +256,7 @@ const ImageRetouchingPrice = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image}`}
+                            src={`http://localhost:5000/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

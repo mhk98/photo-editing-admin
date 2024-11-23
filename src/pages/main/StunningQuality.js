@@ -16,7 +16,7 @@ import {
   useUpdateStunningQualityMutation,
 } from "../../features/stunningQuality/stunningQuality";
 const StunningQuality = () => {
-  const thead = ["image1", "image2", "image3", "image4", "image5", "action"];
+  const thead = ["image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10", "action"];
 
   const { t } = useContext(TranslatorContext);
 
@@ -29,11 +29,21 @@ const StunningQuality = () => {
   const [image3, setImage3] = useState("");
   const [image4, setImage4] = useState("");
   const [image5, setImage5] = useState("");
+  const [image6, setImage6] = useState("");
+  const [image7, setImage7] = useState("");
+  const [image8, setImage8] = useState("");
+  const [image9, setImage9] = useState("");
+  const [image10, setImage10] = useState("");
   const [file1, setFile1] = useState("");
   const [file2, setFile2] = useState("");
   const [file3, setFile3] = useState("");
   const [file4, setFile4] = useState("");
   const [file5, setFile5] = useState("");
+  const [file6, setFile6] = useState("");
+  const [file7, setFile7] = useState("");
+  const [file8, setFile8] = useState("");
+  const [file9, setFile9] = useState("");
+  const [file10, setFile10] = useState("");
   const [bannerData, setBannerData] = useState([]);
   const [updateId, setUpdateId] = useState("");
   const handleClose = () => setShow(false);
@@ -72,6 +82,36 @@ const StunningQuality = () => {
       setImage5(e.target.files[0]);
     }
   }
+  function handleChange6(e) {
+    setFile6(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage6(e.target.files[0]);
+    }
+  }
+  function handleChange7(e) {
+    setFile7(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage7(e.target.files[0]);
+    }
+  }
+  function handleChange8(e) {
+    setFile8(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage8(e.target.files[0]);
+    }
+  }
+  function handleChange9(e) {
+    setFile9(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage9(e.target.files[0]);
+    }
+  }
+  function handleChange10(e) {
+    setFile10(URL.createObjectURL(e.target.files[0]));
+    if (e.target.files && e.target.files.length > 0) {
+      setImage10(e.target.files[0]);
+    }
+  }
 
   const [createStunningQuality] = useCreateStunningQualityMutation();
 
@@ -83,6 +123,11 @@ const StunningQuality = () => {
     formData.append("image3", image3);
     formData.append("image4", image4);
     formData.append("image5", image5);
+    formData.append("image6", image6);
+    formData.append("image7", image7);
+    formData.append("image8", image8);
+    formData.append("image10", image9);
+    formData.append("image10", image10);
     try {
       const res = await createStunningQuality(formData);
       if (res) {
@@ -103,6 +148,11 @@ const StunningQuality = () => {
     formData.append("image3", image3);
     formData.append("image4", image4);
     formData.append("image5", image5);
+    formData.append("image6", image6);
+    formData.append("image7", image7);
+    formData.append("image8", image8);
+    formData.append("image10", image9);
+    formData.append("image10", image10);
     try {
       const res = await updateStunningQuality({ id: updateId, data: formData });
       if (res) {
@@ -152,7 +202,7 @@ const StunningQuality = () => {
 
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton className="text-center p-3">
-                <Modal.Title className="w-100">Home Banner</Modal.Title>
+                <Modal.Title className="w-100">Home Quality Stunning</Modal.Title>
               </Modal.Header>
               <Modal.Body className="p-2 text-center">
                 <form onSubmit={onFormSubmit}>
@@ -221,6 +271,71 @@ const StunningQuality = () => {
                       onChange={handleChange5}
                     />
                   </div>
+                  <div className="mb-3">
+                      <label htmlFor="image6" className="form-label">
+                        Upload Image 6
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image6"
+                        name="image6"
+                        accept="image/*"
+                        onChange={handleChange6}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image7" className="form-label">
+                        Upload Image 7
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image7"
+                        name="image7"
+                        accept="image/*"
+                        onChange={handleChange7}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image8" className="form-label">
+                        Upload Image 8
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image8"
+                        name="image8"
+                        accept="image/*"
+                        onChange={handleChange8}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image8" className="form-label">
+                        Upload Image 9
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image9"
+                        name="image9"
+                        accept="image/*"
+                        onChange={handleChange9}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image8" className="form-label">
+                        Upload Image 10
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image10"
+                        name="image10"
+                        accept="image/*"
+                        onChange={handleChange10}
+                      />
+                    </div>
                   <Button type="submit" variant="primary">
                     Submit
                   </Button>
@@ -257,7 +372,7 @@ const StunningQuality = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -267,7 +382,7 @@ const StunningQuality = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -276,7 +391,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -285,7 +400,7 @@ const StunningQuality = () => {
 
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -294,7 +409,47 @@ const StunningQuality = () => {
 
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image5}`}
+                          src={`http://localhost:5000/${item.image5}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image6}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image7}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image8}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image9}`}
+                          alt=""
+                          width={80}
+                          height={60}
+                        />
+                      </td>
+                      <td>
+                        <img
+                          src={`http://localhost:5000/${item.image10}`}
                           alt=""
                           width={80}
                           height={60}
@@ -395,6 +550,72 @@ const StunningQuality = () => {
                         name="image5"
                         accept="image/*"
                         onChange={handleChange5}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image6" className="form-label">
+                        Upload Image 6
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image6"
+                        name="image6"
+                        accept="image/*"
+                        onChange={handleChange6}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image7" className="form-label">
+                        Upload Image 7
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image7"
+                        name="image7"
+                        accept="image/*"
+                        onChange={handleChange7}
+                      />
+                    </div>
+
+                    <div className="mb-3">
+                      <label htmlFor="image8" className="form-label">
+                        Upload Image 8
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image8"
+                        name="image8"
+                        accept="image/*"
+                        onChange={handleChange8}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image9" className="form-label">
+                        Upload Image 9
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image9"
+                        name="image9"
+                        accept="image/*"
+                        onChange={handleChange9}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label htmlFor="image8" className="form-label">
+                        Upload Image 10
+                      </label>
+                      <input
+                        className="form-control"
+                        type="file"
+                        id="image10"
+                        name="image10"
+                        accept="image/*"
+                        onChange={handleChange10}
                       />
                     </div>
                     <Button type="submit" variant="primary">

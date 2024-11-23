@@ -158,7 +158,7 @@ const WhyChooseUs = () => {
 
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton className="text-center p-3">
-                <Modal.Title className="w-100">Home Banner</Modal.Title>
+                <Modal.Title className="w-100">Home Why Choose Us</Modal.Title>
               </Modal.Header>
               <Modal.Body className="p-2 text-center">
                 <form onSubmit={onFormSubmit}>
@@ -264,7 +264,7 @@ const WhyChooseUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -274,7 +274,7 @@ const WhyChooseUs = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -283,7 +283,7 @@ const WhyChooseUs = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -292,7 +292,7 @@ const WhyChooseUs = () => {
 
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -301,7 +301,7 @@ const WhyChooseUs = () => {
 
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image5}`}
+                          src={`http://localhost:5000/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}
@@ -335,7 +335,7 @@ const WhyChooseUs = () => {
 
               <Modal show={show1} onHide={handleClose1}>
                 <Modal.Header closeButton className="text-center p-3">
-                  <Modal.Title className="w-100">Home Banner</Modal.Title>
+                  <Modal.Title className="w-100">Home Why Choose Us</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="p-2 text-center">
                   <form onSubmit={onFormEdit}>

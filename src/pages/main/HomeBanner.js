@@ -114,37 +114,37 @@ const HomeBanner = () => {
     }
   };
 
-  // const [homeBannerData, setHomeBannerData] = useState([]);
+  const [homeBannerData, setHomeBannerData] = useState([]);
 
 
-  // const { data, isLoading, isError, error } = useGetAllHomeBannerQuery();
+  const { data, isLoading, isError, error } = useGetAllHomeBannerQuery();
 
-  // useEffect(() => {
-  //   if (isError) {
-  //     console.error("Error fetching health data", error);
-  //   } else if (!isLoading) {
-  //     if (data) {
-  //       setHomeBannerData(data.data);
-  //     }
-  //   }
-  // }, [data, isLoading, isError, error]);
+  useEffect(() => {
+    if (isError) {
+      console.error("Error fetching health data", error);
+    } else if (!isLoading) {
+      if (data) {
+        setHomeBannerData(data.data);
+      }
+    }
+  }, [data, isLoading, isError, error]);
 
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
  
   console.log("bgProjects", data);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://api.pixamoss.com/api/v1/homeBanner'); // Replace with your API endpoint
-        setData(response.data.data);
-      } catch (err) {
-        console.log(err.message);
-      } 
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('http://localhost:5000/api/v1/homeBanner'); // Replace with your API endpoint
+  //       setData(response.data.data);
+  //     } catch (err) {
+  //       console.log(err.message);
+  //     } 
+  //   };
 
-    fetchData();
-  }, []); 
+  //   fetchData();
+  // }, []); 
 
   const [deleteHomeBanner] = useDeleteHomeBannerMutation();
 
@@ -257,7 +257,7 @@ const HomeBanner = () => {
                   </tr>
                 </thead>
                 <tbody className="mc-table-body even">
-                  {data?.map((item, index) => (
+                  {homeBannerData?.map((item, index) => (
                     <tr key={index}>
                       {/* <td title="id">
                         <div className="mc-table-check">
@@ -274,7 +274,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -284,7 +284,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -293,7 +293,7 @@ const HomeBanner = () => {
                       </td>
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image3}`}
+                          src={`http://localhost:5000/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -302,7 +302,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image4}`}
+                          src={`http://localhost:5000/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -311,7 +311,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`https://api.pixamoss.com/${item.image5}`}
+                          src={`http://localhost:5000/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}

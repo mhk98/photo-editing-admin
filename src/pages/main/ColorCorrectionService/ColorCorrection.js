@@ -110,7 +110,7 @@ const ColorCorrection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api.pixamoss.com/api/v1/colorCorrection'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:5000/api/v1/colorCorrection'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -209,7 +209,7 @@ const ColorCorrection = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image1}`}
+                            src={`http://localhost:5000/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -219,7 +219,7 @@ const ColorCorrection = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`https://api.pixamoss.com/${item.image2}`}
+                            src={`http://localhost:5000/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
