@@ -136,7 +136,7 @@ const HomeBanner = () => {
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
-  //       const response = await axios.get('http://localhost:5000/api/v1/homeBanner'); // Replace with your API endpoint
+  //       const response = await axios.get('https://api.pixamoss.com/api/v1/homeBanner'); // Replace with your API endpoint
   //       setData(response.data.data);
   //     } catch (err) {
   //       console.log(err.message);
@@ -274,7 +274,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image1}`}
+                            src={`https://api.pixamoss.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -284,7 +284,7 @@ const HomeBanner = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image2}`}
+                            src={`https://api.pixamoss.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -293,7 +293,7 @@ const HomeBanner = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image3}`}
+                          src={`https://api.pixamoss.com/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -302,7 +302,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image4}`}
+                          src={`https://api.pixamoss.com/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -311,7 +311,7 @@ const HomeBanner = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image5}`}
+                          src={`https://api.pixamoss.com/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}

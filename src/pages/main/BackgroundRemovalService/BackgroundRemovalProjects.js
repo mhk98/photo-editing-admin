@@ -70,6 +70,8 @@ const BackgroundRemovalProjects = () => {
       const res = await updateBackgroundRemovalProjects({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
+      window.location.reload();
+
       }
     } catch (error) {
       toast.error(error.message);
@@ -97,7 +99,7 @@ const BackgroundRemovalProjects = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/v1/backgroundRemovalProjects'); // Replace with your API endpoint
+        const response = await axios.get('https://api.pixamoss.com/api/v1/backgroundRemovalProjects'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -116,6 +118,8 @@ const BackgroundRemovalProjects = () => {
     const res = await deleteBackgroundRemovalProjects(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
+      window.location.reload();
+
     }
     console.log(res);
   };
@@ -186,7 +190,7 @@ const BackgroundRemovalProjects = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

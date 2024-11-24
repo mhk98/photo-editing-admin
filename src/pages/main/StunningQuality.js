@@ -131,9 +131,11 @@ const StunningQuality = () => {
     try {
       const res = await createStunningQuality(formData);
       if (res) {
+        console.log('stunningRes', res)
         toast.success(res.info.message);
       }
     } catch (error) {
+      console.log(error)
       toast.error(error.message);
     }
   };
@@ -156,9 +158,11 @@ const StunningQuality = () => {
     try {
       const res = await updateStunningQuality({ id: updateId, data: formData });
       if (res) {
+        console.log('stunningRes', res)
         toast.success(res.data.message);
       }
     } catch (error) {
+      console.log(error)
       toast.error(error.message);
     }
   };
@@ -169,15 +173,16 @@ const StunningQuality = () => {
 
   useEffect(() => {
     if (isError) {
-      console.error("Error fetching health data", error);
+      console.error("Error fetching stunning data", error);
     } else if (!isLoading) {
       if (data) {
+        
         setStunningQuality(data.data);
       }
     }
   }, [data, isLoading, isError, error]);
 
-  console.log('stunningQuality', stunningQuality);
+ 
 
   const [deleteStunningQuality] = useDeleteStunningQualityMutation();
 
@@ -186,7 +191,6 @@ const StunningQuality = () => {
     if (res.data.status === "Success") {
       alert("Do you want to delete");
     }
-    console.log(res);
   };
 
   return (
@@ -372,7 +376,7 @@ const StunningQuality = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image1}`}
+                            src={`https://api.pixamoss.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -382,7 +386,7 @@ const StunningQuality = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image2}`}
+                            src={`https://api.pixamoss.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -391,7 +395,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image3}`}
+                          src={`https://api.pixamoss.com/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -400,7 +404,7 @@ const StunningQuality = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image4}`}
+                          src={`https://api.pixamoss.com/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -409,7 +413,7 @@ const StunningQuality = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image5}`}
+                          src={`https://api.pixamoss.com/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}
@@ -417,7 +421,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image6}`}
+                          src={`https://api.pixamoss.com/${item.image6}`}
                           alt=""
                           width={80}
                           height={60}
@@ -425,7 +429,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image7}`}
+                          src={`https://api.pixamoss.com/${item.image7}`}
                           alt=""
                           width={80}
                           height={60}
@@ -433,7 +437,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image8}`}
+                          src={`https://api.pixamoss.com/${item.image8}`}
                           alt=""
                           width={80}
                           height={60}
@@ -441,7 +445,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image9}`}
+                          src={`https://api.pixamoss.com/${item.image9}`}
                           alt=""
                           width={80}
                           height={60}
@@ -449,7 +453,7 @@ const StunningQuality = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image10}`}
+                          src={`https://api.pixamoss.com/${item.image10}`}
                           alt=""
                           width={80}
                           height={60}

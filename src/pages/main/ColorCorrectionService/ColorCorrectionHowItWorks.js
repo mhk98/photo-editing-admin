@@ -53,6 +53,8 @@ const ColorCorrectionHowItWorks = () => {
       const res = await createclippingPathHowItWorks(formData);
       if (res) {
         toast.success(res.info.message);
+      window.location.reload();
+
       }
     } catch (error) {
       toast.error(error.message);
@@ -70,6 +72,8 @@ const ColorCorrectionHowItWorks = () => {
       const res = await updatecolorCorrectionHowItWorks({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
+      window.location.reload();
+
       }
     } catch (error) {
       toast.error(error.message);
@@ -83,7 +87,7 @@ const ColorCorrectionHowItWorks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/v1/colorCorrectionHowItWorks'); // Replace with your API endpoint
+        const response = await axios.get('https://api.pixamoss.com/api/v1/colorCorrectionHowItWorks'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -99,6 +103,8 @@ const ColorCorrectionHowItWorks = () => {
     const res = await deletecolorCorrectionHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
+      window.location.reload();
+
     }
     console.log(res);
   };
@@ -169,7 +175,7 @@ const ColorCorrectionHowItWorks = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

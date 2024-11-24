@@ -87,6 +87,8 @@ const BackgroundRemovalPrice = () => {
       const res = await updateBackgroundRemovalPrice({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
+      window.location.reload();
+
       }
     } catch (error) {
       toast.error(error.message);
@@ -115,7 +117,7 @@ const BackgroundRemovalPrice = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/v1/backgroundRemovalPrice'); // Replace with your API endpoint
+        const response = await axios.get('https://api.pixamoss.com/api/v1/backgroundRemovalPrice'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -130,7 +132,9 @@ const BackgroundRemovalPrice = () => {
   const handleDeleteHomeBanner = async (id) => {
     const res = await deleteBackgroundRemovalPrice(id);
     if (res.data.status === "Success") {
+      window.location.reload();
       alert("Do you want to delete");
+
     }
     console.log(res);
   };
@@ -275,7 +279,7 @@ const BackgroundRemovalPrice = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

@@ -15,6 +15,7 @@ import {
   useDeleteHomeSliderMutation,
   useGetAllHomeSliderQuery,
   useUpdateHomeSliderMutation,
+
 } from "../../features/homeSlider/homeSlider";
 const HomeSlider = () => {
   const thead = ["image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10", "image11", "image12", "action"];
@@ -56,6 +57,7 @@ const HomeSlider = () => {
   const handleShow = () => setShow(true);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
+  console.log('updateId', updateId)
 
   function handleChange1(e) {
     setFile1(URL.createObjectURL(e.target.files[0]));
@@ -177,6 +179,7 @@ const HomeSlider = () => {
     formData.append("image10", image10);
     formData.append("image11", image11);
     formData.append("image12", image12);
+
     try {
       const res = await updateHomeSlider({ id: updateId, data: formData });
       if (res) {
@@ -422,7 +425,7 @@ const HomeSlider = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image1}`}
+                            src={`https://api.pixamoss.com/${item.image1}`}
                             alt=""
                             width={80}
                             height={60}
@@ -432,7 +435,7 @@ const HomeSlider = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image2}`}
+                            src={`https://api.pixamoss.com/${item.image2}`}
                             alt=""
                             width={80}
                             height={60}
@@ -441,7 +444,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image3}`}
+                          src={`https://api.pixamoss.com/${item.image3}`}
                           alt=""
                           width={80}
                           height={60}
@@ -450,7 +453,7 @@ const HomeSlider = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image4}`}
+                          src={`https://api.pixamoss.com/${item.image4}`}
                           alt=""
                           width={80}
                           height={60}
@@ -459,7 +462,7 @@ const HomeSlider = () => {
 
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image5}`}
+                          src={`https://api.pixamoss.com/${item.image5}`}
                           alt=""
                           width={80}
                           height={60}
@@ -467,7 +470,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image6}`}
+                          src={`https://api.pixamoss.com/${item.image6}`}
                           alt=""
                           width={80}
                           height={60}
@@ -475,7 +478,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image7}`}
+                          src={`https://api.pixamoss.com/${item.image7}`}
                           alt=""
                           width={80}
                           height={60}
@@ -483,7 +486,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image8}`}
+                          src={`https://api.pixamoss.com/${item.image8}`}
                           alt=""
                           width={80}
                           height={60}
@@ -491,7 +494,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image9}`}
+                          src={`https://api.pixamoss.com/${item.image9}`}
                           alt=""
                           width={80}
                           height={60}
@@ -499,7 +502,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image10}`}
+                          src={`https://api.pixamoss.com/${item.image10}`}
                           alt=""
                           width={80}
                           height={60}
@@ -507,7 +510,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image11}`}
+                          src={`https://api.pixamoss.com/${item.image11}`}
                           alt=""
                           width={80}
                           height={60}
@@ -515,7 +518,7 @@ const HomeSlider = () => {
                       </td>
                       <td>
                         <img
-                          src={`http://localhost:5000/${item.image12}`}
+                          src={`https://api.pixamoss.com/${item.image12}`}
                           alt=""
                           width={80}
                           height={60}

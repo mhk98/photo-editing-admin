@@ -69,6 +69,8 @@ const BackgroundRemovalHowItWorks = () => {
       const res = await updateBackgroundRemovalHowItWorks({ id: updateId, data: formData });
       if (res) {
         toast.success(res.data.message);
+      window.location.reload();
+
       }
     } catch (error) {
       toast.error(error.message);
@@ -97,7 +99,7 @@ const BackgroundRemovalHowItWorks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/v1/backgroundRemovalHowItWorks'); // Replace with your API endpoint
+        const response = await axios.get('https://api.pixamoss.com/api/v1/backgroundRemovalHowItWorks'); // Replace with your API endpoint
         setData(response.data.data);
       } catch (err) {
         console.log(err.message);
@@ -113,6 +115,8 @@ const BackgroundRemovalHowItWorks = () => {
     const res = await deleteBackgroundRemovalHowItWorks(id);
     if (res.data.status === "Success") {
       alert("Do you want to delete");
+      window.location.reload();
+
     }
     console.log(res);
   };
@@ -183,7 +187,7 @@ const BackgroundRemovalHowItWorks = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}

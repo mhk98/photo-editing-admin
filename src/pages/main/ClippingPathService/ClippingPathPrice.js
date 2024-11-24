@@ -20,7 +20,7 @@ const ClippingPathPrice = () => {
   const [blockModal, setBlockModal] = React.useState(false);
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
-  const [image1, setImage1] = useState("");
+  const [image, setImage] = useState("");
 
   const [file1, setFile1] = useState("");
   const [title, setTitle] = useState("");
@@ -41,7 +41,7 @@ const ClippingPathPrice = () => {
   function handleChange1(e) {
     setFile1(URL.createObjectURL(e.target.files[0]));
     if (e.target.files && e.target.files.length > 0) {
-      setImage1(e.target.files[0]);
+      setImage(e.target.files[0]);
     }
   }
 
@@ -50,7 +50,7 @@ const ClippingPathPrice = () => {
   const onFormSubmit = async () => {
     const formData = new FormData();
 
-    formData.append("image", image1);
+    formData.append("image", image);
     formData.append("title", title);
     formData.append("price", price);
     formData.append("feature1", feature1);
@@ -74,7 +74,7 @@ const ClippingPathPrice = () => {
   const onFormEdit = async () => {
     const formData = new FormData();
 
-    formData.append("image", image1);
+    formData.append("image", image);
     formData.append("title", title);
     formData.append("price", price);
     formData.append("feature1", feature1);
@@ -134,13 +134,13 @@ const ClippingPathPrice = () => {
               <Modal.Body className="p-2 text-center">
                 <form onSubmit={onFormSubmit}>
                   <div className="mb-3">
-                    <label htmlFor="image1" className="form-label">
-                      Upload Image 1
+                    <label htmlFor="image" className="form-label">
+                      Upload Image
                     </label>
                     <input
                       className="form-control"
                       type="file"
-                      id="image1"
+                      id="image"
                       name="image"
                       accept="image/*"
                       onChange={handleChange1}
@@ -256,7 +256,7 @@ const ClippingPathPrice = () => {
                       <td>
                         <div className="mc-table-icon role">
                           <img
-                            src={`http://localhost:5000/${item.image}`}
+                            src={`https://api.pixamoss.com/${item.image}`}
                             alt=""
                             width={80}
                             height={60}
@@ -314,13 +314,13 @@ const ClippingPathPrice = () => {
                 <Modal.Body className="p-2 text-center">
                   <form onSubmit={onFormEdit}>
                     <div className="mb-3">
-                      <label htmlFor="image1" className="form-label">
-                        Upload Image 1
+                      <label htmlFor="image" className="form-label">
+                        Upload Image
                       </label>
                       <input
                         className="form-control"
                         type="file"
-                        id="image1"
+                        id="image"
                         name="image"
                         accept="image/*"
                         onChange={handleChange1}
